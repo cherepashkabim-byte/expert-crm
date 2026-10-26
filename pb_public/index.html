@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#FFFFFF">
+  <title>Эксперт · CRM</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23FFE6D6'/%3E%3Ctext x='32' y='47' font-family='PT Serif,Georgia,serif' font-weight='700' font-size='42' text-anchor='middle' fill='%23D94A14'%3E%D0%AD%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/orders.css">
+  <link rel="stylesheet" href="css/clients.css">
+  <link rel="stylesheet" href="css/sales.css">
+  <link rel="stylesheet" href="css/stock.css">
+  <link rel="stylesheet" href="css/tasks.css">
+  <link rel="stylesheet" href="css/schedule.css">
+  <link rel="stylesheet" href="css/cash.css">
+  <link rel="stylesheet" href="css/finance.css">
+  <link rel="stylesheet" href="css/mystats.css">
+  <link rel="stylesheet" href="css/staff.css">
+  <link rel="stylesheet" href="css/kb.css">
+  <link rel="stylesheet" href="css/help.css">
+  <link rel="stylesheet" href="css/settings.css">
+</head>
+<body class="auth">
+  <aside id="side">
+    <div class="side-top">
+      <div class="wordmark" role="img" aria-label="Эксперт — ремонт смартфонов"><span class="w-name"><span class="w-ek">ЭК</span><span class="w-spert">СПЕРТ</span></span><small>Не вывеска, а то, как мы работаем</small></div>
+      <button class="burger" id="burger" type="button" aria-label="Меню" aria-expanded="false">☰</button>
+    </div>
+    <div class="side-body" id="sideBody">
+      <div id="clock"></div>
+      <label class="point-pick">Точка<select id="pointSel"></select></label>
+      <nav id="nav"></nav>
+      <div id="me"></div>
+    </div>
+  </aside>
+  <main id="app"><p class="empty">Загрузка…</p></main>
+  <div id="offline" class="offline" hidden>Нет связи с сервером, изменения не сохранены</div>
+  <div id="modal"></div>
+  <div id="confirm"></div>
+  <div id="toasts"></div>
+  <div id="print"></div>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+/* Стили вкладки «stock». Общие компоненты — в base.css. */
+.stock-q { flex:1; min-width:220px; max-width:520px; }
+.stock-t td { padding:6px 8px; }
+.stock-t td input { background:transparent; border-color:transparent; }
+.stock-t td input:hover { border-color:var(--line); }
+.stock-t td input:focus { background:var(--bg); }
+.stock-t td input[type=number] { width:80px; text-align:right; }
+.stock-t td input.wide { min-width:120px; }
+.stock-t td input.saved { border-color:var(--ok); }
+.stock-t tr.zero td { background:color-mix(in srgb, var(--danger) 6%, var(--card)); }
+.stock-t tr.zero td.stock-n { color:var(--danger); font-weight:700; }
+.stock-head { margin:0; }
+.stock-t td.pt, .moves-t td { white-space:nowrap; }
+.stock-t .where, .prod-t .where { margin-top:4px; white-space:normal; max-width:220px; }
+.stock-points, .prod-points { display:flex; flex-wrap:wrap; gap:4px 18px; margin:0 0 12px; }
+.moves-body { max-height:60vh; overflow:auto; margin-bottom:12px; }
+@media (max-width: 600px) {
+  .stock-q { min-width:0; flex-basis:100%; }
+  .stock-head { width:100%; }
+  .stock-head .btn { flex:1; }
+}
+.stock-t td.acts { white-space:nowrap; }
+.stock-t td.acts .btn + .btn { margin-left:6px; }
+/* Переключатель «Запчасти | Товары» — как был во вкладке «Продажи». */
+.stock-tabs .chip { padding:6px 14px; font-size:14px; }
+/* Скан: «Код … не найден» и «Привязать к позиции». */
+.scan-else { display:flex; flex-direction:column; gap:8px; margin:0 0 14px; }
+.scan-else-row { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:8px 12px; padding:8px 12px; border-radius:10px; background:var(--navy-soft); }
+.scan-acts { flex-wrap:wrap; }
+.bind-q { width:100%; margin-bottom:10px; }
+.bind-list { display:flex; flex-direction:column; gap:4px; max-height:50vh; overflow:auto; margin-bottom:12px; }
+.bind-item { display:flex; flex-wrap:wrap; justify-content:space-between; gap:4px 12px; text-align:left; padding:8px 12px; border:1px solid var(--line); border-radius:10px; background:var(--card); color:var(--text); font:inherit; cursor:pointer; }
+.bind-item:hover, .bind-item:focus-visible { border-color:var(--orange-line); background:var(--orange-soft); outline:none; }

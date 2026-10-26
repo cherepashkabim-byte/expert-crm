@@ -1,0 +1,44 @@
+/* Стили вкладки «schedule» (график смен). Общие компоненты — в base.css. */
+
+.sch-nav { align-items:center; }
+.sch-month { min-width:150px; text-align:center; }
+.sch-brush, .sch-legend, .sch-mine { display:flex; flex-wrap:wrap; gap:6px; align-items:center; margin:12px 0 6px; }
+.sch-brush .chip { font-size:13px; padding:5px 12px; }
+.sch-brush .chip.on { border-color:color-mix(in srgb, var(--c) 75%, var(--ink)); box-shadow:0 0 0 2px var(--orange-soft), 0 0 0 3px var(--orange); }
+.sch-mine .chip { font-size:13px; padding:5px 12px; }
+
+/* цвета точек (по порядку точек) */
+/* .chip.sch-cN — сильнее, чем .chip.on, чтобы выбранная кисть сохраняла цвет точки */
+.sch-c0, .chip.sch-c0 { --c:var(--orange); }
+.sch-c1, .chip.sch-c1 { --c:var(--blue); }
+.sch-c2, .chip.sch-c2 { --c:var(--ok); }
+.sch-c3, .chip.sch-c3 { --c:var(--purple); }
+.sch-c4, .chip.sch-c4 { --c:var(--warn); }
+.sch-c5, .chip.sch-c5 { --c:var(--danger); }
+
+.sch-wrap { margin-top:8px; }
+table.sch { border-collapse:separate; border-spacing:0; width:max-content; min-width:100%; }
+.sch th, .sch td { padding:4px 2px; text-align:center; border-bottom:1px solid var(--line); }
+.sch .sch-name { position:sticky; left:0; z-index:1; background:var(--card); text-align:left; padding:6px 10px; min-width:130px; white-space:nowrap; font-weight:700; }
+.sch .sch-name .small { font-weight:400; }
+.sch-day { font-size:13px; min-width:46px; }
+.sch-day div { font-size:11px; color:var(--muted); font-weight:400; }
+.sch .we { background:color-mix(in srgb, var(--navy-soft) 60%, var(--card)); }
+.sch .today { background:var(--orange-soft); }
+.sch-day.today { color:var(--orange-deep); }
+.sch-cell { height:38px; }
+.sch-cell.edit { cursor:pointer; }
+.sch-cell.edit:hover { background:color-mix(in srgb, var(--orange) 18%, var(--card)); }
+.sch-cell.wait { opacity:.4; }
+.sch-p { display:inline-block; padding:3px 4px; border-radius:6px; font-size:11px; font-weight:700; white-space:nowrap;
+  color:color-mix(in srgb, var(--c) 75%, var(--ink)); background:color-mix(in srgb, var(--c) 16%, var(--card)); }
+.sch-me .sch-name { color:var(--orange-deep); }
+.sch-gaps th, .sch-gaps td { border-bottom:0; font-size:12px; }
+.sch-gaps .sch-name { font-weight:400; color:var(--muted); }
+.sch-gap { display:inline-block; min-width:20px; padding:1px 5px; border-radius:99px; background:color-mix(in srgb, var(--danger) 13%, var(--card)); color:var(--danger); font-weight:700; }
+.sch-ok { color:var(--ok); }
+
+@media (max-width:720px) {
+  .sch .sch-name { min-width:96px; padding:6px; }
+  .sch-month { min-width:0; }
+}

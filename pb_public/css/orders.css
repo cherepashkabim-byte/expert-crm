@@ -1,0 +1,270 @@
+/* Стили вкладки «orders». Общие компоненты — в base.css. */
+
+/* цвета статусов (чип берёт цвет из --c) */
+.chip.st-new { --c:var(--orange); }
+.chip.st-diag { --c:var(--blue); }
+.chip.st-wait { --c:var(--warn); }
+.chip.st-work { --c:var(--purple); }
+.chip.st-ready { --c:var(--ok); }
+.chip.st-issued { --c:var(--muted); }
+.chip.st-refuse { --c:var(--danger); }
+.chip.btnlike b { font-weight:700; margin-left:2px; }
+.ord-chips { gap:6px; }
+/* этап, где сейчас 0 заказов, — серый, чтобы ряд читался по тем, где что-то есть */
+.ord-chips .chip.zero:not(.on) { --c:var(--muted); }
+/* «Ремонты | Продажи» рядом с заголовком — сегментный переключатель, как вкладки карточки; «+ Новый» — меню вниз */
+.head .ord-views { display:inline-flex; margin-right:auto; border:1px solid var(--line-strong); border-radius:10px; overflow:hidden; background:var(--card); }
+.ord-views .chip { font-size:14px; padding:7px 16px; border:0; border-radius:0; --c:var(--navy); background:var(--card); color:var(--navy); }
+.ord-views .chip + .chip { border-left:1px solid var(--line-strong); }
+.ord-views .chip:hover { background:var(--orange-soft); }
+.ord-views .chip.on { background:var(--navy-soft); box-shadow:inset 0 -2px 0 var(--orange); }
+.ord-views .chip:active { transform:none; }
+.oc-menu.down { top:calc(100% + 6px); bottom:auto; }
+.ord-new .oc-menu .small { margin-left:6px; }
+.ord-empty { display:flex; align-items:center; flex-wrap:wrap; gap:10px; }
+.ord-empty .oc-menu { left:0; right:auto; }
+/* списки «Принял» / «Мастер»: выбранный фильтр подсвечен */
+.ord-psel.on { border-color:var(--orange); background:var(--orange-soft); color:var(--orange-deep); font-weight:700; }
+.ord-who { white-space:nowrap; }
+.ord-mark.quick { color:var(--orange-deep); }
+/* быстрый заказ */
+/* «Услуга»: поле с выпадающим списком + «+ В список» (владелец) */
+.qk-svc { display:flex; gap:8px; align-items:center; margin-top:2px; }
+.qk-svc input { flex:1; min-width:0; }
+.qk-svc [hidden] { display:none; }
+.qk-parts-box { margin-top:18px; }
+.qk-parts-box > summary { cursor:pointer; font-weight:700; color:var(--orange-deep); }
+.qk-parts-box[open] > summary { margin-bottom:10px; }
+
+td.wrap { white-space:normal; min-width:160px; }
+.ord-fault { max-width:280px; }
+#ordQ, #cliQ { min-width:260px; flex:1; max-width:420px; }
+
+.ord-mt { margin-top:10px; }
+#payForm { margin-bottom:0; align-items:flex-start; }
+#payForm input { width:140px; }
+.ord-hist .sect { margin-top:16px; }
+
+/* выбор запчасти */
+.pp { margin-top:10px; }
+.pp-tabs { display:flex; gap:6px; margin-bottom:8px; }
+.pp-row { display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+.pp-row .pp-q, .pp-row .pp-name { flex:1; min-width:180px; }
+.pp-row input[type=number] { width:130px; }
+.pp-qty { font-size:12px; color:var(--muted); display:flex; align-items:center; gap:6px; }
+.pp-qty input { width:70px !important; }
+.pp-list { display:grid; gap:4px; margin-top:8px; max-height:260px; overflow-y:auto; }
+.pp-item { display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap; text-align:left; padding:8px 10px; border:1px solid var(--line); border-radius:8px; background:var(--card); color:var(--text); font:inherit; cursor:pointer; transition:border-color .15s, background .15s; }
+.pp-item:hover, .pp-item:focus { border-color:var(--orange); background:var(--orange-soft); outline:none; }
+.pp-item.off { opacity:.6; }
+
+@media (max-width:720px) {
+  #ordQ, #cliQ { min-width:0; width:100%; max-width:none; }
+  #payForm input { width:120px; }
+}
+
+/* просрочено / забыто / гарантия */
+.chip.st-overdue { --c:var(--danger); }
+.chip.st-forgotten { --c:var(--warn); }
+tr.ord-overdue > td { background:color-mix(in srgb, var(--danger) 8%, var(--card)); }
+tr.ord-overdue > td:first-child { box-shadow:inset 3px 0 0 var(--danger); }
+tr.ord-forgot > td { background:color-mix(in srgb, var(--warn) 10%, var(--card)); }
+tr.ord-forgot > td:first-child { box-shadow:inset 3px 0 0 var(--warn); }
+.ord-mark { font-size:12px; color:var(--blue); margin-top:3px; white-space:nowrap; }
+.ord-mark.bad { color:var(--danger); }
+.ord-mark.warn { color:var(--warn); }
+.ord-badges { display:flex; flex-wrap:wrap; gap:6px; margin-top:8px; }
+.ord-badge { display:inline-block; padding:3px 10px; border-radius:999px; font:600 13px var(--sans); border:1px solid color-mix(in srgb, var(--blue) 45%, var(--card)); color:var(--blue); background:var(--card); transition:background .15s; }
+.ord-badge.bad { border-color:var(--danger); color:var(--danger); }
+.ord-badge.warn { border-color:var(--warn); color:var(--warn); }
+.ord-badge.link { cursor:pointer; }
+.ord-badge.link:hover:not(:disabled) { background:color-mix(in srgb, var(--blue) 10%, var(--card)); }
+.ord-note { margin:0 0 12px; padding:8px 12px; border-left:3px solid var(--blue); background:var(--navy-soft); border-radius:6px; font-size:14px; }
+.ord-note.warn { border-left-color:var(--warn); background:color-mix(in srgb, var(--warn) 10%, var(--card)); }
+.fields .ord-note.full { grid-column:1 / -1; }
+
+/* заявки с сайта */
+.ord-leads > summary { cursor:pointer; font:700 18px var(--serif); color:var(--navy); }
+.ord-lead { display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; align-items:flex-start; padding:10px 0; border-top:1px solid var(--line); }
+.ord-lead:first-of-type { margin-top:8px; }
+.ord-lead > div:first-child { flex:1; min-width:200px; overflow-wrap:anywhere; }
+.ord-lead .actions { margin-top:0; }
+
+/* фото */
+.ord-ph { position:relative; }
+.ord-phbtn { padding:0; border:1px solid var(--line); border-radius:8px; overflow:hidden; background:var(--card); cursor:zoom-in; display:block; }
+.ord-phbtn img { display:block; width:64px; height:64px; object-fit:cover; }
+.ord-ph .del { position:absolute; top:-8px; right:-8px; }
+.ord-phadd { width:64px; height:64px; font-size:13px; display:flex; align-items:center; justify-content:center; border:1px dashed var(--orange); border-radius:8px; color:var(--orange-deep); cursor:pointer; font-weight:700; }
+.ord-phadd:hover { background:var(--orange-soft); }
+.ord-phbig { display:block; max-width:100%; max-height:70vh; margin:0 auto 12px; border-radius:8px; }
+
+/* подсказка «где есть» в выборе запчасти */
+.pp-hint { flex-basis:100%; color:var(--warn); }
+.pp-other { margin:10px 0 2px; }
+.pp-pt { margin:6px 0 0; }
+
+@media (max-width:720px) {
+  .ord-lead .actions { width:100%; }
+}
+
+/* подсказки формы приёма: кнопки неисправностей и внешнего вида, обычная цена, «тот же аппарат» */
+.ord-price-hint { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-top:4px; color:var(--ok); font-size:12px; }
+.ord-price-hint[hidden] { display:none; }
+.ord-same { margin-top:-4px; }
+
+/* выпадающий список моделей */
+.sugg-wrap { position:relative; }
+.sugg { position:absolute; left:0; right:0; top:100%; z-index:5; margin-top:4px; max-height:300px; overflow-y:auto; background:var(--card); border:1px solid var(--line); border-radius:10px; box-shadow:var(--shadow-lg); padding:4px; animation:fadeIn .12s ease-out; }
+.sugg[hidden] { display:none; }
+.sugg-i { display:block; width:100%; text-align:left; padding:8px 10px; border:0; border-radius:6px; background:transparent; color:var(--text); font:inherit; font-size:14px; cursor:pointer; }
+.sugg-i:hover, .sugg-i.on { background:var(--orange-soft); }
+
+/* ---------- карточка заказа: шапка, вкладки, история справа, полоса кнопок ---------- */
+.oc { display:grid; grid-template-columns:minmax(0, 1fr); grid-template-areas:"top" "body" "hist" "bar"; gap:0 20px; }
+.oc-top { grid-area:top; min-width:0; }
+.oc-body { grid-area:body; min-width:0; container-type:inline-size; }
+.oc-hist { grid-area:hist; min-width:0; margin-top:12px; }
+.oc-bar { grid-area:bar; }
+@media (min-width:1100px) {
+  .oc { grid-template-columns:minmax(0, 1fr) 340px; grid-template-rows:auto 1fr auto; grid-template-areas:"top hist" "body hist" "bar hist"; min-height:calc(100vh - 48px); }
+  .oc-hist { margin:-24px -24px -24px 0; position:sticky; top:0; align-self:start; height:100vh; border-left:1px solid var(--line); background:var(--navy-soft); }
+}
+
+.oc-h1 { display:flex; align-items:center; gap:6px 10px; flex-wrap:wrap; }
+.oc-h1 h2 { font-size:22px; white-space:nowrap; }
+.oc-h1 > .chip { font-size:13px; }
+.oc-back { border:1px solid var(--line); background:var(--card); color:var(--navy); width:32px; height:32px; border-radius:8px; font-size:18px; line-height:1; cursor:pointer; flex:none; transition:background .15s, border-color .15s; }
+.oc-back:hover { background:var(--orange-soft); border-color:var(--orange); }
+.oc-back:focus-visible, .oc-client:focus-visible, .ord-badge.link:focus-visible, .ord-phbtn:focus-visible { outline:none; box-shadow:var(--ring); }
+.ord-dev { font-size:15px; font-weight:700; color:var(--navy); }
+.oc-client { border:0; background:none; padding:0; font:inherit; font-size:14px; color:var(--orange-deep); cursor:pointer; text-decoration:underline; text-underline-offset:3px; text-decoration-color:var(--orange-line); overflow-wrap:anywhere; text-align:left; }
+.oc-client:hover { text-decoration-color:var(--orange-deep); }
+.oc-h2 { display:flex; align-items:center; gap:6px 8px; flex-wrap:wrap; margin-top:4px; }
+.oc-h2 .ord-badge { font-size:12px; padding:1px 8px; }
+.ord-status { display:flex; flex-wrap:wrap; gap:4px; margin:8px 0 10px; }
+.ord-status .chip { padding:4px 11px; font-size:13px; }
+
+/* вкладки — сегментный переключатель */
+.oc-tabs { display:inline-flex; max-width:100%; border:1px solid var(--line-strong); border-radius:10px; overflow:hidden; margin-bottom:10px; background:var(--card); }
+.oc-tabs button { display:inline-flex; align-items:center; gap:8px; padding:7px 16px; border:0; background:var(--card); color:var(--navy); font:inherit; font-size:14px; cursor:pointer; transition:background .15s, color .15s; }
+.oc-tabs button + button { border-left:1px solid var(--line-strong); }
+.oc-tabs button:hover { background:var(--orange-soft); }
+.oc-tabs button[aria-selected=true] { background:var(--navy-soft); font-weight:700; box-shadow:inset 0 -2px 0 var(--orange); }
+.oc-tabs button:focus-visible { outline:none; box-shadow:var(--ring); }
+.oc-pane { animation:fadeIn .15s ease-out; }
+
+/* плотная сетка полей: 4 колонки на широком, 2 — на среднем, 1 — на узком */
+.oc-grid { display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); gap:8px 12px; }
+.oc-grid label, .oc-note { display:block; font-size:12.5px; color:var(--muted); min-width:0; }
+/* поля — 14px (подпись 12.5px не должна уменьшать сам ввод), одной высоты с полями оплаты */
+.oc-grid input, .oc-grid select, .oc-grid textarea, .oc-note textarea { width:100%; margin-top:3px; padding:7px 10px; font-size:14px; color:var(--text); }
+/* подзаголовки групп — как .dr-sect в панели «Новый заказ» */
+.oc-sub { grid-column:1 / -1; margin:10px 0 0; padding-bottom:5px; border-bottom:1px solid var(--line); font:700 12px/1.3 var(--sans); letter-spacing:.06em; text-transform:uppercase; color:var(--blue); }
+.oc-sub:first-child { margin-top:2px; }
+.oc-grid .full { grid-column:1 / -1; }
+/* «Сообщить по СМС» — в одной строке с «Мастером», а не отдельной строкой */
+.oc-grid .check { grid-column:span 3; align-self:end; margin-bottom:9px; color:var(--text); font-size:14px; }
+.oc-grid .check input { width:auto; margin:0; }
+.oc-grid .oc-c2 { grid-column:span 2; margin:0; align-self:center; }
+.oc-grid textarea { min-height:52px; }
+.oc-work { grid-template-columns:repeat(auto-fill, minmax(150px, 1fr)); }
+.oc-work > label:first-child { grid-column:span 2; }
+@container (max-width:720px) { .oc-grid:not(.oc-work) { grid-template-columns:repeat(2, minmax(0, 1fr)); } .oc-grid .check { grid-column:1 / -1; } }
+@container (max-width:420px) {
+  .oc-work { grid-template-columns:repeat(2, minmax(0, 1fr)); }
+  .oc-grid .oc-c2, .oc-work > label:first-child { grid-column:1 / -1; }
+}
+
+/* фото — полоска миниатюр */
+.oc-photos { display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin-top:10px; }
+.oc-lbl { font-size:12px; color:var(--muted); width:100%; }
+.oc-photos .ord-ph .del { top:-9px; right:-9px; font-size:16px; }
+
+/* «Работы и материалы»: запчасти слева, итоги справа */
+.oc-split { display:flex; gap:16px; align-items:flex-start; margin-top:12px; flex-wrap:wrap; }
+.oc-parts { flex:1 1 360px; min-width:0; }
+.oc-t th, .oc-t td { padding:6px 10px; }
+.oc-t th { font-size:12px; }
+.oc-totals { flex:0 1 260px; display:grid; grid-template-columns:1fr auto; gap:4px 16px; margin:0; padding:10px 14px; border:1px solid var(--line); border-radius:var(--radius); font-size:14px; }
+.oc-totals dt { color:var(--muted); }
+.oc-totals dd { margin:0; text-align:right; font-weight:700; white-space:nowrap; }
+.oc-totals dt.pos { color:var(--ok); font-weight:700; }
+.oc-h { margin:18px 0 8px; }
+.oc-pay { margin:8px 0 0; align-items:flex-start; }
+.oc-pay input { width:130px; }
+.oc-pay input, .oc-pay select { padding:7px 10px; font-size:14px; }
+.oc-pay .btn { padding:7px 14px; font-size:14px; }
+.oc-note { margin-top:12px; }
+
+/* полоса кнопок — всегда у нижнего края */
+.oc-bar { position:sticky; bottom:0; z-index:4; display:flex; align-items:center; gap:8px; flex-wrap:wrap; padding:10px 0; margin-top:12px; background:var(--card); border-top:1px solid var(--line); align-self:end; }
+.oc-gap { flex:1; }
+.oc-mwrap { position:relative; }
+.oc-more { width:40px; padding-left:0; padding-right:0; font-size:18px; line-height:1.2; }
+.oc-menu { position:absolute; right:0; bottom:calc(100% + 6px); z-index:6; min-width:220px; display:grid; gap:2px; padding:4px; background:var(--card); border:1px solid var(--line); border-radius:10px; box-shadow:var(--shadow-lg); animation:fadeIn .12s ease-out; }
+.oc-menu button { text-align:left; padding:8px 10px; border:0; border-radius:6px; background:none; color:var(--text); font:inherit; font-size:14px; cursor:pointer; }
+.oc-menu button:hover:not(:disabled), .oc-menu button:focus-visible { background:var(--orange-soft); outline:none; }
+.oc-menu button:disabled { color:var(--muted); cursor:default; }
+.oc-menu button.danger { color:var(--danger); }
+
+/* история */
+.oc-hd { background:var(--card); border:1px solid var(--line); border-radius:var(--radius); }
+.oc-hd > summary { cursor:pointer; padding:10px 14px; font:700 17px var(--serif); color:var(--navy); }
+.oc-hn { font:400 14px var(--sans); color:var(--muted); }
+.oc-hbody { display:flex; flex-direction:column; border-top:1px solid var(--line); }
+.oc-tl { padding:8px 12px; }
+@media (min-width:1100px) {
+  .oc-hd { height:100%; border:0; border-radius:0; background:transparent; }
+  .oc-hd > summary { list-style:none; cursor:default; height:52px; padding:14px 16px 0; font-size:20px; }
+  .oc-hd > summary::-webkit-details-marker { display:none; }
+  .oc-hbody { height:calc(100vh - 52px); }
+  .oc-tl { flex:1; min-height:0; overflow-y:auto; overscroll-behavior:contain; padding:8px 14px; }
+}
+.tl { list-style:none; margin:0; padding:0 0 0 2px; position:relative; }
+.tl::before { content:""; position:absolute; left:15px; top:6px; bottom:12px; width:2px; background:var(--line-strong); }
+.tl > li { position:relative; }
+.tl-day { text-align:center; margin:10px 0 6px; }
+.tl-day span, .tl-now span { position:relative; display:inline-block; padding:1px 10px; border-radius:99px; background:var(--card); border:1px solid var(--line); font-size:12.5px; font-weight:700; color:var(--navy); }
+.tl-now { margin-top:8px; }
+.tl-now span { background:var(--navy-soft); color:var(--muted); font-weight:400; }
+.tl-row { display:flex; align-items:flex-start; gap:8px; width:100%; padding:5px 4px 5px 0; border:0; background:none; text-align:left; font:inherit; color:var(--text); border-radius:8px; }
+button.tl-row { cursor:pointer; transition:background .15s; }
+button.tl-row:hover { background:var(--orange-soft); }
+button.tl-row:focus-visible { outline:none; box-shadow:var(--ring); }
+.tl-ico { --c:var(--muted); position:relative; flex:none; display:inline-flex; align-items:center; justify-content:center; width:26px; height:26px; border-radius:50%; font-size:13px;
+  color:var(--c); background:color-mix(in srgb, var(--c) 14%, var(--card)); border:1px solid color-mix(in srgb, var(--c) 35%, var(--card)); }
+.tl-ico.k-created { --c:var(--navy); }
+.tl-ico.k-status { --c:var(--blue); }
+.tl-ico.k-payment { --c:var(--ok); }
+.tl-ico.k-part { --c:var(--purple); }
+.tl-ico.k-payment-del, .tl-ico.k-part-del { --c:var(--danger); }
+.tl-ico.k-sms, .tl-ico.k-remind { --c:var(--warn); }
+.tl-ico.k-comment { --c:var(--orange-deep); }
+.tl-t { flex:1; min-width:0; font-size:14px; font-weight:700; line-height:1.3; padding-top:3px; overflow-wrap:anywhere; }
+.tl-who { display:block; font-weight:400; font-size:12px; color:var(--muted); }
+.tl-time { flex:none; font-size:12px; color:var(--muted); padding-top:4px; }
+button.tl-row .tl-time::after { content:" ▸"; }
+button.tl-row[aria-expanded=true] .tl-time::after { content:" ▾"; }
+.tl-det { margin:0 0 6px 34px; padding:6px 10px; font-size:13px; background:var(--card); border:1px solid var(--line); border-radius:8px; overflow-wrap:anywhere; animation:fadeIn .15s ease-out; }
+.tl-det > div + div { margin-top:2px; }
+.tl-cmt .tl-det { border-color:var(--orange-line); background:var(--orange-soft); }
+.tl-text { white-space:pre-wrap; margin-top:2px; }
+.oc-cmt { display:flex; gap:6px; align-items:flex-end; padding:10px 12px; border-top:1px solid var(--line); background:var(--card); }
+.oc-cmt textarea { flex:1; min-height:44px; max-height:140px; padding:6px 9px; font-size:14px; }
+.oc-cmt .btn { padding:8px 10px; display:inline-flex; }
+
+/* выпадающий список вариантов с галочками */
+.mpick .mp-i { display:flex; align-items:center; gap:8px; }
+.mp-box { flex:none; display:inline-flex; align-items:center; justify-content:center; width:16px; height:16px; border:1.5px solid var(--line-strong); border-radius:4px; font-size:12px; font-weight:700; color:var(--on-dark); }
+.mp-i.sel .mp-box { background:var(--orange); border-color:var(--orange); }
+.mp-i.sel { font-weight:700; }
+
+@media (max-width:720px) {
+  .oc-h1 h2 { font-size:19px; }
+  .oc-tabs { display:flex; }
+  .oc-tabs button { flex:1; justify-content:center; padding:7px 8px; font-size:13px; }
+  .oc-tabs svg { display:none; }
+  .oc-totals { flex-basis:100%; }
+  .oc-bar { margin-left:-12px; margin-right:-12px; padding:8px 12px; }
+}

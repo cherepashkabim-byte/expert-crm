@@ -1,0 +1,23 @@
+/* Стили вкладки «sales». Общие компоненты — в base.css. */
+.sales-head { margin:0; }
+.sales-tabs .chip { padding:6px 14px; font-size:14px; }
+.sales-period { min-width:120px; }
+.sales-q { flex:1; min-width:220px; max-width:420px; }
+.prod-t td { padding:6px 8px; }
+.prod-t td input { background:transparent; border-color:transparent; }
+.prod-t td input:hover { border-color:var(--line); }
+.prod-t td input:focus { background:var(--bg); }
+.prod-t td input[type=number] { width:90px; text-align:right; }
+.prod-t td input.saved { border-color:var(--ok); }
+.prod-t tr.zero td { background:color-mix(in srgb, var(--danger) 6%, var(--card)); }
+.prod-t td.acts .btn + .btn { margin-left:6px; }
+.prod-t .btn:disabled { opacity:.5; cursor:not-allowed; }
+.sale-sum { background:var(--navy-soft); border-radius:10px; padding:10px 14px; display:flex; flex-wrap:wrap; gap:6px 12px; align-items:baseline; font-size:15px; }
+.sale-sum b { font-size:18px; }
+.prod-t td.pt { white-space:nowrap; }
+.prod-t td.acts { white-space:nowrap; }
+@media (max-width: 600px) {
+  .sales-q { min-width:0; flex-basis:100%; }
+}
+.prod-t td input.wide { min-width:120px; }
+.sales-new { margin-left:auto; }

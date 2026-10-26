@@ -1,0 +1,7 @@
+/* Стили вкладки «cash». Общие компоненты — в base.css. */
+.cash-hint { margin:-8px 0 14px; }
+.cash-form { margin-bottom:6px; align-items:center; }
+.cash-form input[name="amount"] { width:130px; }
+.cash-form input[name="category"] { width:150px; }
+.cash-days td, .cash-days th { white-space:nowrap; }
+.cash-days tfoot td { border-top:2px solid var(--line); background:var(--navy-soft); font-weight:700; }

@@ -1,0 +1,23 @@
+# CRM «Эксперт» на сервере: PocketBase как служба systemd (автозапуск, перезапуск при сбое).
+# Настройки — в /etc/expert-crm.env: CRM_DOMAIN (пусто — работа по IP на порту 80, без HTTPS;
+# задан — PocketBase сам получает сертификат Let's Encrypt и слушает 80 и 443), SMS_RU_API_ID.
+[Unit]
+Description=CRM Expert (PocketBase)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=crm
+Group=crm
+WorkingDirectory=/opt/expert-crm
+EnvironmentFile=/etc/expert-crm.env
+# Порты 80/443 без root.
+AmbientCapabilities=CAP_NET_BIND_SERVICE
+ExecStart=/bin/sh /opt/expert-crm/run.sh
+Restart=on-failure
+RestartSec=5
+LimitNOFILE=65536
+
+[Install]
+WantedBy=multi-user.target

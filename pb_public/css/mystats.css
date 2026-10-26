@@ -1,0 +1,4 @@
+/* Стили вкладки «mystats». Общие компоненты — в base.css; переключатель периода — в finance.css. */
+.ms-period { margin:-6px 0 12px; font-weight:600; }
+.ms-period::first-letter { text-transform:uppercase; }
+.ms-period .chip.ms-closed { --c:var(--warn); font-weight:700; margin-left:6px; }

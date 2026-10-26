@@ -1,0 +1,14 @@
+/* Стили вкладки «finance». Общие компоненты — в base.css. */
+.fin-period { margin:-6px 0 12px; font-weight:600; }
+.fin-period::first-letter { text-transform:uppercase; }
+.fin-hint { margin:-8px 0 8px; }
+.fin-fine { margin-bottom:6px; }
+.fin-fine input[name="amount"] { width:120px; }
+.fin-fine input[name="reason"] { flex:1; min-width:140px; }
+.fin-acts { display:inline-flex; gap:6px; flex-wrap:wrap; margin-left:auto; }
+.fin-closeinfo { margin:-6px 0 12px; display:flex; gap:8px; align-items:baseline; flex-wrap:wrap; }
+.chip.fin-closed { --c:var(--warn); font-weight:700; }
+@media (max-width:600px) {
+  .fin-acts { margin-left:0; width:100%; }
+  .fin-acts .btn { flex:1; }
+}

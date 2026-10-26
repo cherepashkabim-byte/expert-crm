@@ -1,0 +1,20 @@
+/* Стили вкладки «help». Общие компоненты — в base.css. */
+.help { display:grid; grid-template-columns:260px minmax(0, 1fr); gap:16px; align-items:start; }
+.help-body { min-width:0; }
+.help-body .sect { overflow-x:auto; overflow-wrap:anywhere; }
+.help-toc { position:sticky; top:12px; }
+.help-toc ol { margin:0; padding-left:20px; line-height:1.9; font-size:14px; }
+.help-toc a { color:var(--text); text-decoration:none; }
+.help-toc a:hover { color:var(--orange-deep); text-decoration:underline; }
+.help-body .sect { line-height:1.6; }
+.help-body .sect:first-child { margin-top:0; }
+.help-body ol, .help-body ul { padding-left:22px; }
+.help-body li { margin:4px 0; }
+.help-body code { background:var(--navy-soft); border:1px solid var(--line); border-radius:4px; padding:1px 5px; font-size:13px; word-break:break-all; }
+.help-tbl td { padding:6px 10px 6px 0; vertical-align:top; }
+.help-faq dt { font-weight:600; margin-top:12px; color:var(--text); }
+.help-faq dd { margin:4px 0 0; color:var(--muted); }
+@media (max-width:800px) {
+  .help { grid-template-columns:minmax(0, 1fr); }
+  .help-toc { position:static; }
+}

@@ -1,0 +1,941 @@
+[
+  {
+    "slug": "samsung-galaxy-a32",
+    "title": "Galaxy A32 / A32 5G",
+    "category": "Модель",
+    "brand": "Samsung",
+    "deviceType": "Телефон",
+    "models": [
+      "Galaxy A32",
+      "Galaxy A32 5G"
+    ],
+    "body": "## Коротко\nБюджетная линейка с двумя разными аппаратами: A32 (4G) и A32 5G. Гайды iFixit по разборке есть только для **A32 5G** — на 4G-версию их порядок без проверки не переносить. В таблице IP-рейтингов Samsung модели A32 нет, а модели не из таблицы, по словам Samsung, рейтинга не имеют.\n\n## Частые неисправности\nПодтверждённой массовой аппаратной сервисной программы для A32 в проверенных источниках не найдено.\n\n## При приёме проверить\n- Не включается / чёрный экран: проверить на исправных кабеле и блоке, осмотреть телефон, кабель и зарядку на механические и жидкостные повреждения (рекомендация Samsung).\n- Звук / микрофон: отключить Bluetooth, сделать пробную запись, проверить в безопасном режиме (рекомендация Samsung).\n- Если на телефоне One UI 5 и новее, предложите клиенту перед сдачей включить **Maintenance mode** («Режим обслуживания»: Настройки → Обслуживание устройства). Он прячет фото, контакты и сообщения в отдельной учётной записи; нужен заданный экран блокировки и свободное место (1,5 ГБ на 64-гигабайтных, 500 МБ на остальных). Выход — с вводом кода владельца; приложения, поставленные в режиме, удаляются.\n\n## Ремонт: на что обратить внимание\nПо гайдам iFixit для A32 5G:\n- Вскрытие — **сзади**: задняя крышка на клею, греть и резать клей. У треснувшей крышки присоска может не держать.\n- Под крышкой — средняя рамка на винтах и **пластиковых защёлках** (сидят туго). Перед снятием рамки отключить шлейф кнопок питания и громкости.\n- Дальше отключить батарею, шлейф дисплея и отдельный шлейф дигитайзера.\n- Экран снимается **спереди**, клей сильный, греть несколько раз. У фронтальной камеры вводить медиатор не глубже 2–3 мм. Шлейфы экрана продеты через корпус — экран до конца не тянуть.\n- Батарея на сильном клею: не греть её напрямую, не гнуть и не прокалывать; помогает изопропиловый спирт (>90 %) в зазоры. Повреждённую батарею обратно не ставить.\n\n## Что сказать клиенту\n- «Защиты от воды у этой модели, по данным Samsung, нет — после ремонта тем более не обещаем».\n- «Крышку после вскрытия ставим на новый клей».",
+    "sources": [
+      {
+        "title": "Samsung — Galaxy phones and tablets dust and water resistance (IP rating)",
+        "url": "https://www.samsung.com/us/support/answer/ANS10001610/"
+      },
+      {
+        "title": "Samsung — Blank or black display on a Samsung phone or tablet",
+        "url": "https://www.samsung.com/us/support/troubleshoot/TSG10002028/"
+      },
+      {
+        "title": "Samsung — How to resolve audio and microphone issues",
+        "url": "https://www.samsung.com/ae/support/mobile-devices/how-to-resolve-audio-and-microphone-issues-on-your-galaxy-device/"
+      },
+      {
+        "title": "Samsung — Use Maintenance mode on your Galaxy phone or tablet",
+        "url": "https://www.samsung.com/us/support/answer/ANS10003675/"
+      },
+      {
+        "title": "iFixit — Samsung Galaxy A32 5G Screen Replacement",
+        "url": "https://www.ifixit.com/Guide/Samsung+Galaxy+A32+5G+Screen+Replacement/148120"
+      },
+      {
+        "title": "iFixit — Samsung Galaxy A32 5G Battery Replacement",
+        "url": "https://www.ifixit.com/Guide/Samsung+Galaxy+A32+5G+Battery+Replacement/148119"
+      },
+      {
+        "title": "iFixit — Samsung Galaxy A32 5G Back Cover Replacement",
+        "url": "https://www.ifixit.com/Guide/Samsung+Galaxy+A32+5G+Back+Cover+Replacement/148114"
+      }
+    ],
+    "checked": "2026-10-21"
+  },
+  {
+    "slug": "samsung-galaxy-a52",
+    "title": "Galaxy A52",
+    "category": "Модель",
+    "brand": "Samsung",
+    "deviceType": "Телефон",
+    "models": [
+      "Galaxy A52",
+      "Galaxy A52 5G"
+    ],
+    "body": "## Коротко\nВышел в марте 2021 года (iFixit), Super AMOLED 6,5″, батарея 4500 мА·ч, оптический сканер в экране. Samsung указывает для Galaxy A52 5G рейтинг **IP67** (пресная вода до 1 м, до 30 минут). Главная ловушка при ремонте — крупный разъём основного межплатного шлейфа.\n\n## Частые неисправности\nПодтверждённой массовой аппаратной сервисной программы для A52 в проверенных источниках не найдено.\n\n## При приёме проверить\n- Не включается / чёрный экран: проверить на исправных кабеле и блоке, осмотреть телефон, кабель и зарядку на механические и жидкостные повреждения (рекомендация Samsung).\n- Звук / микрофон: отключить Bluetooth, сделать пробную запись, проверить в безопасном режиме (рекомендация Samsung).\n- Сканер отпечатка в экране — до ремонта экрана.\n- Если на телефоне One UI 5 и новее, предложите клиенту перед сдачей включить **Maintenance mode** («Режим обслуживания»: Настройки → Обслуживание устройства). Он прячет фото, контакты и сообщения в отдельной учётной записи; нужен заданный экран блокировки и свободное место (1,5 ГБ на 64-гигабайтных, 500 МБ на остальных). Выход — с вводом кода владельца; приложения, поставленные в режиме, удаляются.\n\n## Ремонт: на что обратить внимание\nПо гайдам iFixit:\n- Вскрытие — **сзади**: задняя крышка на клею, греть и резать.\n- Затем крышка над платой на винтах, отключить батарею и межплатный шлейф.\n- **Разъём экрана — на нижней подплате** и слегка приклеен к ней.\n- Экран снимается **спереди** с нагревом. У фронтальной камеры медиатор не глубже 3–4 мм. Шлейф экрана продет через рамку — экран до конца не тянуть.\n- Батарея снимается с жидкостью для снятия клея; после — вытереть остатки спирта и дать высохнуть.\n- **Ловушка:** при сборке разъём основного межплатного шлейфа со стороны платы большой и легко отходит — iFixit отмечает это как очень частую проблему именно этой модели. Проверить посадку до закрытия.\n- Без новых уплотняющих проклеек телефон работает, но защиту от воды, скорее всего, теряет (iFixit).\n\n## Что сказать клиенту\n- «IP67 у Samsung — это лабораторный тест, и он со временем слабеет. После вскрытия заводскую защиту от воды не обещаем».\n- «Если был в воде — не заряжайте, сразу к нам».",
+    "sources": [
+      {
+        "title": "Samsung — Galaxy phones and tablets dust and water resistance (IP rating)",
+        "url": "https://www.samsung.com/us/support/answer/ANS10001610/"
+      },
+      {
+        "title": "Samsung — Blank or black display on a Samsung phone or tablet",
+        "url": "https://www.samsung.com/us/support/troubleshoot/TSG10002028/"
+      },
+      {
+        "title": "Samsung — How to resolve audio and microphone issues",
+        "url": "https://www.samsung.com/ae/support/mobile-devices/how-to-resolve-audio-and-microphone-issues-on-your-galaxy-device/"
+      },
+      {
+        "title": "Samsung — Use Maintenance mode on your Galaxy phone or tablet",
+        "url": "https://www.samsung.com/us/support/answer/ANS10003675/"
+      },
+      {
+        "title": "iFixit — Samsung Galaxy A52 (характеристики)",
+        "url": "https://www.ifixit.com/Device/Samsung_Galaxy_A52"
+      },
+      {
+        "title": "iFixit — Samsung Galaxy A52 Screen Replacement",
+        "url": "https://www.ifixit.com/Guide/Samsung+Galaxy+A52+Screen+Replacement/148635"
+      },
+      {
+        "title": "iFixit — Samsung Galaxy A52 Battery Replacement",
+        "url": "https://www.ifixit.com/Guide/Samsung+Galaxy+A52+Battery+Replacement/148528"
+      },
+      {
+        "title": "iFixit — Samsung Galaxy A52 Back Cover Replacement",
+        "url": "https://www.ifixit.com/Guide/Samsung+Galaxy+A52+Back+Cover+Replacement/148121"
+      }
+    ],
+    "checked": "2026-10-21"
+  },
+  {
+    "slug": "samsung-galaxy-a53",
+    "title": "Galaxy A53 5G",
+    "category": "Модель",
+    "brand": "Samsung",
+    "deviceType": "Телефон",
+    "models": [
+      "Galaxy A53",
+      "Galaxy A53 5G"
+    ],
+    "body": "## Коротко\nSamsung указывает для Galaxy A53 5G рейтинг **IP67** (пресная вода до 1 м, до 30 минут; только низкое давление воды). У iFixit есть гайды на заднюю крышку, батарею, подплату, сканер отпечатка и динамик; гайда на экран нет.\n\n## Частые неисправности\nПодтверждённой массовой аппаратной сервисной программы для A53 в проверенных источниках не найдено.\n\n## При приёме проверить\n- Не включается / чёрный экран: проверить на исправных кабеле и блоке, осмотреть телефон, кабель и зарядку на механические и жидкостные повреждения (рекомендация Samsung).\n- Звук / микрофон: отключить Bluetooth, сделать пробную запись, проверить в безопасном режиме (рекомендация Samsung).\n- Сканер отпечатка в экране.\n- Если на телефоне One UI 5 и новее, предложите клиенту перед сдачей включить **Maintenance mode** («Режим обслуживания»: Настройки → Обслуживание устройства). Он прячет фото, контакты и сообщения в отдельной учётной записи; нужен заданный экран блокировки и свободное место (1,5 ГБ на 64-гигабайтных, 500 МБ на остальных). Выход — с вводом кода владельца; приложения, поставленные в режиме, удаляются.\n\n## Ремонт: на что обратить внимание\nПо гайдам iFixit:\n- Вскрытие — **сзади**: задняя крышка на клею, греть и резать.\n- К батарее: крышка над платой, отключить батарею, снять громкий динамик, отключить и снять межплатные шлейфы (их два).\n- Батарея на сильном клею: не греть её напрямую, не прокалывать; помогает изопропиловый спирт (>90 %) в зазоры между батареей и рамкой.\n- Новую батарею ставить на новый клей, клей клеить в корпус, а не на батарею.\n\n## Что сказать клиенту\n- «IP67 — лабораторный результат, со временем слабеет. После вскрытия заводскую защиту не обещаем».",
+    "sources": [
+      {
+        "title": "Samsung — Galaxy phones and tablets dust and water resistance (IP rating)",
+        "url": "https://www.samsung.com/us/support/answer/ANS10001610/"
+      },
+      {
+        "title": "Samsung Singapore — Galaxy A55 5G specs (сноски IP67 для A52 5G и A53 5G)",
+        "url": "https://www.samsung.com/sg/smartphones/galaxy-a/galaxy-a55-5g-awesome-navy-128gb-sm-a556ezkaxsp/"
+      },
+      {
+        "title": "Samsung — Blank or black display on a Samsung phone or tablet",
+        "url": "https://www.samsung.com/us/support/troubleshoot/TSG10002028/"
+      },
+      {
+        "title": "Samsung — How to resolve audio and microphone issues",
+        "url": "https://www.samsung.com/ae/support/mobile-devices/how-to-resolve-audio-and-microphone-issues-on-your-galaxy-device/"
+      },
+      {
+        "title": "Samsung — Use Maintenance mode on your Galaxy phone or tablet",
+        "url": "https://www.samsung.com/us/support/answer/ANS10003675/"
+      },
+      {
+        "title": "iFixit — Samsung Galaxy A53 5G Battery Replacement",
+        "url": "https://www.ifixit.com/Guide/Samsung+Galaxy+A53+5G+Battery+Replacement/150564"
+      },
+      {
+        "title": "iFixit — Samsung Galaxy A53 5G Back Cover Replacement",
+        "url": "https://www.ifixit.com/Guide/Samsung+Galaxy+A53+5G+Back+Cover+Replacement/150563"
+      }
+    ],
+    "checked": "2026-10-21"
+  },
+  {
+    "slug": "samsung-galaxy-a54",
+    "title": "Galaxy A54 5G",
+    "category": "Модель",
+    "brand": "Samsung",
+    "deviceType": "Телефон",
+    "models": [
+      "Galaxy A54",
+      "Galaxy A54 5G"
+    ],
+    "body": "## Коротко\nSamsung указывает для Galaxy A54 5G рейтинг **IP67**. Задняя панель у A54 стеклянная (у iFixit гайд называется Back Glass). Гайда на замену экрана у iFixit нет.\n\n## Частые неисправности\nПодтверждённой массовой аппаратной сервисной программы для A54 в проверенных источниках не найдено.\n\n## При приёме проверить\n- Не включается / чёрный экран: проверить на исправных кабеле и блоке, осмотреть телефон, кабель и зарядку на механические и жидкостные повреждения (рекомендация Samsung).\n- Звук / микрофон: отключить Bluetooth, сделать пробную запись, проверить в безопасном режиме (рекомендация Samsung).\n- Целостность заднего стекла и стёкол камер.\n- Если на телефоне One UI 5 и новее, предложите клиенту перед сдачей включить **Maintenance mode** («Режим обслуживания»: Настройки → Обслуживание устройства). Он прячет фото, контакты и сообщения в отдельной учётной записи; нужен заданный экран блокировки и свободное место (1,5 ГБ на 64-гигабайтных, 500 МБ на остальных). Выход — с вводом кода владельца; приложения, поставленные в режиме, удаляются.\n\n## Ремонт: на что обратить внимание\nПо гайдам iFixit:\n- Перед разборкой полностью выключить телефон и вынуть лоток SIM.\n- Вскрытие — **сзади**: заднее стекло на клею, греть; поднять с первого раза удаётся не всегда — догреть и повторить.\n- Батарея: не гнуть и не прокалывать; если не идёт — ещё изопропилового спирта; можно взять мощную присоску. Новую батарею — на новый клей, клей клеить в корпус.\n\n## Что сказать клиенту\n- «IP67 — лабораторный результат, со временем слабеет. После замены заднего стекла заводскую защиту от воды не обещаем».",
+    "sources": [
+      {
+        "title": "Samsung — Galaxy phones and tablets dust and water resistance (IP rating)",
+        "url": "https://www.samsung.com/us/support/answer/ANS10001610/"
+      },
+      {
+        "title": "Samsung — Blank or black display on a Samsung phone or tablet",
+        "url": "https://www.samsung.com/us/support/troubleshoot/TSG10002028/"
+      },
+      {
+        "title": "Samsung — How to resolve audio and microphone issues",
+        "url": "https://www.samsung.com/ae/support/mobile-devices/how-to-resolve-audio-and-microphone-issues-on-your-galaxy-device/"
+      },
+      {
+        "title": "Samsung — Use Maintenance mode on your Galaxy phone or tablet",
+        "url": "https://www.samsung.com/us/support/answer/ANS10003675/"
+      },
+      {
+        "title": "iFixit — Samsung Galaxy A54 5G Back Glass Replacement",
+        "url": "https://www.ifixit.com/Guide/Samsung+Galaxy+A54+5G+Back+Glass+Replacement/211217"
+      },
+      {
+        "title": "iFixit — Samsung Galaxy A54 5G Battery Replacement",
+        "url": "https://www.ifixit.com/Guide/Samsung+Galaxy+A54+5G+Battery+Replacement/208289"
+      }
+    ],
+    "checked": "2026-10-21"
+  },
+  {
+    "slug": "samsung-galaxy-a55",
+    "title": "Galaxy A55 5G",
+    "category": "Модель",
+    "brand": "Samsung",
+    "deviceType": "Телефон",
+    "models": [
+      "Galaxy A55",
+      "Galaxy A55 5G"
+    ],
+    "body": "## Коротко\nПо странице Samsung: Super AMOLED FHD+, батарея 5000 мА·ч (типичная; номинальная 4905), металлическая рамка, Gorilla Glass Victus+. Рейтинг **IP67** — пресная вода до 1 м, до 30 минут; Samsung пишет, что защита со временем слабеет. Гайдов iFixit по разборке A55 нет — порядок разборки в базе не описан.\n\n## Частые неисправности\nПодтверждённой массовой аппаратной сервисной программы для A55 в проверенных источниках не найдено.\n\n## При приёме проверить\n- Не включается / чёрный экран: проверить на исправных кабеле и блоке, осмотреть телефон, кабель и зарядку на механические и жидкостные повреждения (рекомендация Samsung).\n- Звук / микрофон: отключить Bluetooth, сделать пробную запись, проверить в безопасном режиме (рекомендация Samsung).\n- Если на телефоне One UI 5 и новее, предложите клиенту перед сдачей включить **Maintenance mode** («Режим обслуживания»: Настройки → Обслуживание устройства). Он прячет фото, контакты и сообщения в отдельной учётной записи; нужен заданный экран блокировки и свободное место (1,5 ГБ на 64-гигабайтных, 500 МБ на остальных). Выход — с вводом кода владельца; приложения, поставленные в режиме, удаляются.\n\n## Что сказать клиенту\n- «IP67 — это тест в пресной воде в лаборатории, и защита со временем слабеет. После вскрытия заводскую защиту не обещаем».",
+    "sources": [
+      {
+        "title": "Samsung India — Galaxy A55 5G: характеристики",
+        "url": "https://www.samsung.com/in/smartphones/galaxy-a/galaxy-a55-5g-awesome-iceblue-256gb-sm-a556elbgins/"
+      },
+      {
+        "title": "Samsung — Blank or black display on a Samsung phone or tablet",
+        "url": "https://www.samsung.com/us/support/troubleshoot/TSG10002028/"
+      },
+      {
+        "title": "Samsung — How to resolve audio and microphone issues",
+        "url": "https://www.samsung.com/ae/support/mobile-devices/how-to-resolve-audio-and-microphone-issues-on-your-galaxy-device/"
+      },
+      {
+        "title": "Samsung — Use Maintenance mode on your Galaxy phone or tablet",
+        "url": "https://www.samsung.com/us/support/answer/ANS10003675/"
+      }
+    ],
+    "checked": "2026-10-21"
+  },
+  {
+    "slug": "samsung-galaxy-s21",
+    "title": "Galaxy S21 / S21+ / S21 Ultra",
+    "category": "Модель",
+    "brand": "Samsung",
+    "deviceType": "Телефон",
+    "models": [
+      "Galaxy S21",
+      "Galaxy S21+",
+      "Galaxy S21 Plus",
+      "Galaxy S21 Ultra"
+    ],
+    "body": "## Коротко\nЛинейка 2021 года, у всех трёх **IP68** (Samsung). Сканер отпечатка — в экране. Экран и батарея сидят на очень сильном клею; iFixit оценил ремонтопригодность S21 Ultra в **3 из 10**. У обычного S21 задняя крышка пластиковая.\n\n## Частые неисправности\n- **Зелёная / розовая вертикальная полоса на экране** без удара → неисправность AMOLED-дисплея → диагностика и замена дисплейного модуля. Samsung India предлагала разовую замену экрана для S21, S21+ и S21 Ultra (в поздних списках — и S21 FE): для телефонов не старше 3 лет с покупки, даже без действующей гарантии; срок продлевали до 30.09.2025, панель бесплатно, работа — за счёт клиента, нужен чек. Это сведения профильных изданий со ссылкой на поддержку Samsung India, официальной страницы программы нет.\n\n> Зарубежная сервисная программа не означает бесплатный ремонт в России. Клиенту бесплатную замену не обещать.\n\n## При приёме проверить\n- Полосы, пятна, мерцание экрана — записать до ремонта, есть ли следы удара.\n- Сканер отпечатка в экране.\n- Не включается / чёрный экран: проверить на исправных кабеле и блоке, осмотреть телефон, кабель и зарядку на механические и жидкостные повреждения (рекомендация Samsung).\n- Если на телефоне One UI 5 и новее, предложите клиенту перед сдачей включить **Maintenance mode** («Режим обслуживания»: Настройки → Обслуживание устройства). Он прячет фото, контакты и сообщения в отдельной учётной записи; нужен заданный экран блокировки и свободное место (1,5 ГБ на 64-гигабайтных, 500 МБ на остальных). Выход — с вводом кода владельца; приложения, поставленные в режиме, удаляются.\n\n## Ремонт: на что обратить внимание\nПо гайдам и разборкам iFixit:\n- Вскрытие — **сзади**: задняя крышка на клею. У S21 крышка пластиковая — есть риск, что она треснет; много клея у блока камер, за край блока камер не резать.\n- Под крышкой — катушка беспроводной зарядки с NFC (у S21 — вместе с кронштейном платы), затем разъём батареи. У S21 и S21+ шлейф дисплея — отдельная съёмная деталь (у S21+ есть отдельный гайд на её замену).\n- Экран снимается **спереди**, клей очень сильный, греть многократно. У S21 есть ещё клей под центром экрана. Медиатор — только кончиком (4–5 мм), чтобы не порвать шлейф сканера в экране; у S21 Ultra шлейфы дисплея и сканера продеты через рамку.\n- Батарея на сильном клею: спирт понемногу (может затечь на экран и платы), у S21 Ultra — спирт плюс нагрев экрана.\n- Все винты S21 — одинаковые Phillips (iFixit).\n\n## Запчасти и совместимость\nУ iFixit для всех трёх моделей есть отдельные гайды «Screen and Battery Assembly»: экран идёт сборкой с батареей и рамкой, на которую переносят платы и модули. Документально подтверждённой совместимости экранов между S21, S21+ и S21 Ultra не найдено.\n\n## Что сказать клиенту\n- «IP68 — лабораторный тест. После вскрытия телефон теряет заводской рейтинг: насколько держит воду, зависит от новой проклейки» (iFixit).\n- «Полоса на экране — аппаратная, перезагрузка её обычно не убирает. Бесплатная замена была только в Индии».",
+    "sources": [
+      {
+        "title": "Samsung — Galaxy phones and tablets dust and water resistance (IP rating)",
+        "url": "https://www.samsung.com/us/support/answer/ANS10001610/"
+      },
+      {
+        "title": "9to5Google — Samsung green line: one-time screen replacements (India, 2024)",
+        "url": "https://9to5google.com/2024/04/22/samsung-green-line-replacements-support/"
+      },
+      {
+        "title": "GSMArena — Samsung India free screen replacements for Galaxy S and Note with green screen issues (2024)",
+        "url": "https://m.gsmarena.com/samsung_india_is_offering_free_screen_replacements_for_galaxy_s_and_note_series_phones_with_green_sc-news-62543.php"
+      },
+      {
+        "title": "SamMobile — Samsung extends free screen replacement for green line issue until September 2025",
+        "url": "https://www.sammobile.com/news/samsung-extends-free-screen-replacement-for-green-line-issue-until-september-2025/"
+      },
+      {
+        "title": "Samsung — Blank or black display on a Samsung phone or tablet",
+        "url": "https://www.samsung.com/us/support/troubleshoot/TSG10002028/"
+      },
+      {
+        "title": "Samsung — Use Maintenance mode on your Galaxy phone or tablet",
+        "url": "https://www.samsung.com/us/support/answer/ANS10003675/"
+      },
+      {
+        "title": "iFixit — Samsung Galaxy S21 Teardown",
+        "url": "https://www.ifixit.com/Teardown/Samsung+Galaxy+S21+Teardown/140337"
+      },
+      {
+        "title": "iFixit — Samsung Galaxy S21 Ultra Teardown",
+        "url": "https://www.ifixit.com/Teardown/Samsung+Galaxy+S21+Ultra+Teardown/141188"
+      },
+      {
+        "title": "iFixit — Samsung Galaxy S21 Back Cover Replacement",
+        "url": "https://www.ifixit.com/Guide/Samsung+Galaxy+S21+Back+Cover+Replacement/148649"
+      },
+      {
+        "title": "iFixit — Samsung Galaxy S21 Screen Replacement",
+        "url": "https://www.ifixit.com/Guide/Samsung+Galaxy+S21+Screen+Replacement/148742"
+      },
+      {
+        "title": "iFixit — Samsung Galaxy S21 Plus Screen Replacement",
+        "url": "https://www.ifixit.com/Guide/Samsung+Galaxy+S21+Plus+Screen+Replacement/148566"
+      },
+      {
+        "title": "iFixit — Samsung Galaxy S21 Plus Display Cable Replacement",
+        "url": "https://www.ifixit.com/Guide/Samsung+Galaxy+S21+Plus+Display+Cable+Replacement/148662"
+      },
+      {
+        "title": "iFixit — Samsung Galaxy S21 Ultra Screen Replacement",
+        "url": "https://www.ifixit.com/Guide/Samsung+Galaxy+S21+Ultra+Screen+Replacement/148258"
+      },
+      {
+        "title": "iFixit — Samsung Galaxy S21 Ultra Battery Replacement",
+        "url": "https://www.ifixit.com/Guide/Samsung+Galaxy+S21+Ultra+Battery+Replacement/148256"
+      },
+      {
+        "title": "iFixit — Samsung Galaxy S21 Screen and Battery Assembly Replacement",
+        "url": "https://www.ifixit.com/Guide/Samsung+Galaxy+S21+Screen+and+Battery+Assembly+Replacement/148783"
+      }
+    ],
+    "checked": "2026-10-21"
+  },
+  {
+    "slug": "samsung-galaxy-s22",
+    "title": "Galaxy S22 / S22+ / S22 Ultra",
+    "category": "Модель",
+    "brand": "Samsung",
+    "deviceType": "Телефон",
+    "models": [
+      "Galaxy S22",
+      "Galaxy S22+",
+      "Galaxy S22 Plus",
+      "Galaxy S22 Ultra"
+    ],
+    "body": "## Коротко\nЛинейка 2022 года, у всех трёх **IP68** (Samsung). Вскрытие сзади, экран — спереди и с риском разбить стекло. У S22 Ultra есть стилус S Pen. По итогам разборки iFixit: батарею менять слишком сложно, каждый ремонт — через крепкий клей.\n\n## Частые неисправности\n- **Зелёная / розовая вертикальная полоса** без удара → неисправность AMOLED-дисплея → диагностика и замена дисплея. В списках моделей программы Samsung India по разовой замене экрана из этой линейки назван только **S22 Ultra (SM-S908E)**: не старше 3 лет с покупки, срок продлевали до 30.09.2025, панель бесплатно, работа платная. Для S22 и S22+ в конкретных списках программы нет — *требует проверки*. Это сведения профильных изданий, официальной страницы программы нет.\n\n> Зарубежная сервисная программа не означает бесплатный ремонт в России. Клиенту бесплатную замену не обещать.\n\n## При приёме проверить\n- Полосы и пятна на экране, следы удара.\n- Сканер отпечатка в экране; у S22 Ultra — наличие и работа S Pen.\n- Не включается / чёрный экран: проверить на исправных кабеле и блоке, осмотреть телефон, кабель и зарядку на механические и жидкостные повреждения (рекомендация Samsung).\n- Если на телефоне One UI 5 и новее, предложите клиенту перед сдачей включить **Maintenance mode** («Режим обслуживания»: Настройки → Обслуживание устройства). Он прячет фото, контакты и сообщения в отдельной учётной записи; нужен заданный экран блокировки и свободное место (1,5 ГБ на 64-гигабайтных, 500 МБ на остальных). Выход — с вводом кода владельца; приложения, поставленные в режиме, удаляются.\n\n## Ремонт: на что обратить внимание\nПо гайдам iFixit:\n- Перед ремонтом разрядить батарею ниже 25 %.\n- Вскрытие — **сзади**. Клей задней крышки липкий и после установки не двигается: кривая проклейка — плохое уплотнение. Металлическую рамку камер не гнуть.\n- S22: катушку беспроводной зарядки от громкого динамика не отделять. У S22 Ultra шлейф-переходник дисплея лежит под правой частью катушки — не порвать.\n- Экран S22 снимается **спереди** после отключения шлейфа экрана; заднюю крышку на время можно поставить на старый клей. Зазор очень маленький — нужен тонкий жёсткий инструмент (iFlex). Стекло может рассыпаться — перчатки и очки. По длинным краям не глубже 3,5 мм (графитовая плёнка под экраном). Экран держат две полосы клея: большая (верх и длинные стороны) и малая (низ). Малярный скотч — только на стекло: сильный скотч снимает краску с рамки.\n- S22 Ultra: стекло хрупкое в углах; клей сильнее всего в правом нижнем и левом верхнем углах; на батарею не опираться. Отдельного гайда «только экран» у iFixit нет — только замена сборки «экран + батарея», и в начале в ней вынимают S Pen.\n- Батарея: изопропиловый спирт понемногу — избыток вредит экрану. Прижимные разъёмы ставить, нажимая по краям, а не в середину.\n\n## Запчасти и совместимость\nУ iFixit на все три модели есть гайды «Screen and Battery Assembly»: экран идёт сборкой с батареей и рамкой. Документально подтверждённой совместимости экранов между моделями не найдено.\n\n## Что сказать клиенту\n- «После вскрытия телефон теряет заводской рейтинг IP68: как будет держать воду, зависит от проклейки» (iFixit).\n- «Снятие экрана может разбить стекло — снятый экран повторно не используется».",
+    "sources": [
+      {
+        "title": "Samsung — Galaxy phones and tablets dust and water resistance (IP rating)",
+        "url": "https://www.samsung.com/us/support/answer/ANS10001610/"
+      },
+      {
+        "title": "GSMArena — Samsung India free screen replacements for Galaxy S and Note with green screen issues (2024)",
+        "url": "https://m.gsmarena.com/samsung_india_is_offering_free_screen_replacements_for_galaxy_s_and_note_series_phones_with_green_sc-news-62543.php"
+      },
+      {
+        "title": "SamMobile — Samsung extends free screen replacement for green line issue until September 2025",
+        "url": "https://www.sammobile.com/news/samsung-extends-free-screen-replacement-for-green-line-issue-until-september-2025/"
+      },
+      {
+        "title": "9to5Google — Samsung green line: one-time screen replacements (India, 2024)",
+        "url": "https://9to5google.com/2024/04/22/samsung-green-line-replacements-support/"
+      },
+      {
+        "title": "Samsung — Blank or black display on a Samsung phone or tablet",
+        "url": "https://www.samsung.com/us/support/troubleshoot/TSG10002028/"
+      },
+      {
+        "title": "Samsung — Use Maintenance mode on your Galaxy phone or tablet",
+        "url": "https://www.samsung.com/us/support/answer/ANS10003675/"
+      },
+      {
+        "title": "iFixit — Samsung Galaxy S22 Teardown",
+        "url": "https://www.ifixit.com/Teardown/Samsung+Galaxy+S22+Teardown/148710"
+      },
+      {
+        "title": "iFixit — Samsung Galaxy S22 Back Cover Replacement",
+        "url": "https://www.ifixit.com/Guide/Samsung+Galaxy+S22+Back+Cover+Replacement/155378"
+      },
+      {
+        "title": "iFixit — Samsung Galaxy S22 Screen Replacement",
+        "url": "https://www.ifixit.com/Guide/Samsung+Galaxy+S22+Screen+Replacement/207470"
+      },
+      {
+        "title": "iFixit — Samsung Galaxy S22 Battery Replacement",
+        "url": "https://www.ifixit.com/Guide/Samsung+Galaxy+S22+Battery+Replacement/163932"
+      },
+      {
+        "title": "iFixit — Samsung Galaxy S22+ Battery Replacement",
+        "url": "https://www.ifixit.com/Guide/Samsung+Galaxy+S22++Battery+Replacement/163953"
+      },
+      {
+        "title": "iFixit — Samsung Galaxy S22 Ultra Battery Replacement",
+        "url": "https://www.ifixit.com/Guide/Samsung+Galaxy+S22+Ultra+Battery+Replacement/163948"
+      },
+      {
+        "title": "iFixit — Samsung Galaxy S22 Ultra Screen and Battery Assembly Replacement",
+        "url": "https://www.ifixit.com/Guide/Samsung+Galaxy+S22+Ultra+Screen+and+Battery+Assembly+Replacement/155140"
+      }
+    ],
+    "checked": "2026-10-21"
+  },
+  {
+    "slug": "samsung-galaxy-s23",
+    "title": "Galaxy S23 / S23+ / S23 Ultra",
+    "category": "Модель",
+    "brand": "Samsung",
+    "deviceType": "Телефон",
+    "models": [
+      "Galaxy S23",
+      "Galaxy S23+",
+      "Galaxy S23 Plus",
+      "Galaxy S23 Ultra"
+    ],
+    "body": "## Коротко\nЛинейка 2023 года, у всех трёх **IP68** (Samsung). Вскрытие сзади; снятие экрана по iFixit разрушает его (стекло отходит от панели). Для S23+ гайдов iFixit нет.\n\n## Частые неисправности\n- **Зелёные линии на экране** → неисправность дисплея → диагностика и замена. По данным SamMobile, поддержка Samsung India подтвердила клиенту, что **Galaxy S23** входит в список на бесплатную замену дисплея: телефон не старше 3 лет, без механических повреждений, работа платная (около 649 рупий); срок — до 30.09.2025 с продлением до декабря 2025. S23+ и S23 Ultra в тексте статьи прямо не названы — *требует проверки*.\n\n> Зарубежная сервисная программа не означает бесплатный ремонт в России. Клиенту бесплатную замену не обещать.\n\n## При приёме проверить\n- Полосы на экране, следы удара.\n- Сканер отпечатка в экране; у S23 Ultra — S Pen.\n- Не включается / чёрный экран: проверить на исправных кабеле и блоке, осмотреть телефон, кабель и зарядку на механические и жидкостные повреждения (рекомендация Samsung).\n- Если на телефоне One UI 5 и новее, предложите клиенту перед сдачей включить **Maintenance mode** («Режим обслуживания»: Настройки → Обслуживание устройства). Он прячет фото, контакты и сообщения в отдельной учётной записи; нужен заданный экран блокировки и свободное место (1,5 ГБ на 64-гигабайтных, 500 МБ на остальных). Выход — с вводом кода владельца; приложения, поставленные в режиме, удаляются.\n\n## Ремонт: на что обратить внимание\nПо гайдам iFixit:\n- Разрядить батарею ниже 25 %, вздутую — с мерами предосторожности. Не перегревать: батарея боится нагрева.\n- Вскрытие — **сзади**, задняя крышка на клею по периметру; у S23 остаётся участок клея прямо под вспышкой. У камер медиатором осторожно (у S23 Ultra — не глубже 4 мм).\n- Под крышкой: катушка беспроводной зарядки вместе с громким динамиком, затем разъём батареи и межплатные шлейфы.\n- Экран снимается **спереди**: зазор крошечный, нужен iFlex — ввести чуть-чуть, иначе можно повредить фронтальную камеру. Стекло может рассыпаться — перчатки и очки. Стекло отслаивается от панели и выглядит «испорченным» — для снятия это нормально; у S23 Ultra панель и стекло снимаются по отдельности, способ разрушающий.\n- S23 Ultra: углы стекла хрупкие, клей сильнее всего в правом нижнем и левом верхнем углах, на батарею не опираться.\n- Батарея на язычках; если не идёт — 1–2 капли спирта (>90 %) у левого края.\n- До закрытия включить и проверить всё, затем снова полностью выключить.\n\n## Запчасти и совместимость\nУ iFixit для S23 и S23 Ultra есть гайды «Screen and Battery Assembly» — экран идёт сборкой с батареей и рамкой. Подтверждённой совместимости экранов между моделями не найдено.\n\n## Что сказать клиенту\n- «После вскрытия телефон теряет заводскую влагозащиту в полном объёме — не обещаем».\n- «Старый экран при замене разрушается, вернуть его не получится».",
+    "sources": [
+      {
+        "title": "Samsung — Galaxy phones and tablets dust and water resistance (IP rating)",
+        "url": "https://www.samsung.com/us/support/answer/ANS10001610/"
+      },
+      {
+        "title": "SamMobile — Galaxy S23 green line issue: Samsung India free fix",
+        "url": "https://www.sammobile.com/news/affected-galaxy-s23-green-line-issue-samsung-india-fix-free/"
+      },
+      {
+        "title": "Samsung — Blank or black display on a Samsung phone or tablet",
+        "url": "https://www.samsung.com/us/support/troubleshoot/TSG10002028/"
+      },
+      {
+        "title": "Samsung — Use Maintenance mode on your Galaxy phone or tablet",
+        "url": "https://www.samsung.com/us/support/answer/ANS10003675/"
+      },
+      {
+        "title": "iFixit — Galaxy S23 Teardown",
+        "url": "https://www.ifixit.com/Teardown/Galaxy+S23+Teardown/158006"
+      },
+      {
+        "title": "iFixit — Samsung Galaxy S23 Back Cover Replacement",
+        "url": "https://www.ifixit.com/Guide/Samsung+Galaxy+S23+Back+Cover+Replacement/173900"
+      },
+      {
+        "title": "iFixit — Samsung Galaxy S23 Screen Replacement",
+        "url": "https://www.ifixit.com/Guide/Samsung+Galaxy+S23+Screen+Replacement/175309"
+      },
+      {
+        "title": "iFixit — Samsung Galaxy S23 Battery Replacement",
+        "url": "https://www.ifixit.com/Guide/Samsung+Galaxy+S23+Battery+Replacement/174225"
+      },
+      {
+        "title": "iFixit — Galaxy S23 Ultra Screen Replacement",
+        "url": "https://www.ifixit.com/Guide/Galaxy+S23+Ultra+Screen+Replacement/173953"
+      },
+      {
+        "title": "iFixit — Galaxy S23 Ultra Battery Replacement",
+        "url": "https://www.ifixit.com/Guide/Galaxy+S23+Ultra+Battery+Replacement/173949"
+      },
+      {
+        "title": "iFixit — Samsung Galaxy S23 Screen and Battery Assembly Replacement",
+        "url": "https://www.ifixit.com/Guide/Samsung+Galaxy+S23+Screen+and+Battery+Assembly+Replacement/174021"
+      }
+    ],
+    "checked": "2026-10-21"
+  },
+  {
+    "slug": "samsung-galaxy-s24",
+    "title": "Galaxy S24 / S24+ / S24 Ultra",
+    "category": "Модель",
+    "brand": "Samsung",
+    "deviceType": "Телефон",
+    "models": [
+      "Galaxy S24",
+      "Galaxy S24+",
+      "Galaxy S24 Plus",
+      "Galaxy S24 Ultra"
+    ],
+    "body": "## Коротко\nЛинейка 2024 года, у всех трёх **IP68** (Samsung). Вскрытие сзади, экран — спереди. У S24 Ultra сканер отпечатка крепится к экрану у левого верхнего угла — главная ловушка при снятии экрана.\n\n## Частые неисправности\nПодтверждённой общей сервисной программы для S24-серии в проверенных источниках не найдено.\n\n## При приёме проверить\n- Экран (полосы, пятна), сканер отпечатка; у S24 Ultra — S Pen.\n- Не включается / чёрный экран: проверить на исправных кабеле и блоке, осмотреть телефон, кабель и зарядку на механические и жидкостные повреждения (рекомендация Samsung).\n- Если на телефоне One UI 5 и новее, предложите клиенту перед сдачей включить **Maintenance mode** («Режим обслуживания»: Настройки → Обслуживание устройства). Он прячет фото, контакты и сообщения в отдельной учётной записи; нужен заданный экран блокировки и свободное место (1,5 ГБ на 64-гигабайтных, 500 МБ на остальных). Выход — с вводом кода владельца; приложения, поставленные в режиме, удаляются.\n\n## Ремонт: на что обратить внимание\nПо гайдам iFixit:\n- Разрядить батарею ниже 25 %; не перегревать.\n- Вскрытие — **сзади**, задняя крышка на клею; у камер и вспышки медиатор не глубже 4 мм.\n- Под крышкой: катушка беспроводной зарядки с громким динамиком, разъём батареи, межплатные шлейфы. У S24 Ultra на плате у каждого прижимного разъёма напечатана стрелка — поддевать только там, чтобы не сорвать SMD-компоненты; на динамике тоже есть стрелка.\n- Экран — **спереди**: зазор очень маленький, iFlex вводить совсем чуть-чуть (фронтальная камера). Стекло может рассыпаться — перчатки и очки; стекло отходит от панели — это нормально.\n- S24 Ultra: шлейф сканера отпечатка у левого верхнего угла — не тянуть его медиатором, можно повредить плату. Под нижним краем панели — компоненты с прокладками: медиатор под них, прокладки не отрывать. Панель двухслойная — медиатор должен идти полностью под панелью.\n- Батарея на двойной плёнке: при вытягивании за язычок поднимается левый край, правый остаётся; остаток плёнки снимают следующим шагом. Металлом батарею не трогать.\n- До закрытия включить и проверить всё, затем снова выключить.\n\n## Запчасти и совместимость\nУ iFixit для S24, S24+ и S24 Ultra есть гайды «Screen and Battery Assembly» — экран идёт сборкой с батареей и рамкой.\n\n## Что сказать клиенту\n- «Влагозащиту после вскрытия как у нового не обещаем».\n- «Если на экране полосы или он чёрный — не давите на стекло, сразу к нам».",
+    "sources": [
+      {
+        "title": "Samsung — Galaxy phones and tablets dust and water resistance (IP rating)",
+        "url": "https://www.samsung.com/us/support/answer/ANS10001610/"
+      },
+      {
+        "title": "Samsung — Blank or black display on a Samsung phone or tablet",
+        "url": "https://www.samsung.com/us/support/troubleshoot/TSG10002028/"
+      },
+      {
+        "title": "Samsung — Use Maintenance mode on your Galaxy phone or tablet",
+        "url": "https://www.samsung.com/us/support/answer/ANS10003675/"
+      },
+      {
+        "title": "iFixit — Samsung Galaxy S24 Back Cover Replacement",
+        "url": "https://www.ifixit.com/Guide/Samsung+Galaxy+S24+Back+Cover+Replacement/175059"
+      },
+      {
+        "title": "iFixit — Samsung Galaxy S24 Screen Replacement",
+        "url": "https://www.ifixit.com/Guide/Samsung+Galaxy+S24+Screen+Replacement/175579"
+      },
+      {
+        "title": "iFixit — Samsung Galaxy S24 Battery Replacement",
+        "url": "https://www.ifixit.com/Guide/Samsung+Galaxy+S24+Battery+Replacement/175612"
+      },
+      {
+        "title": "iFixit — Samsung Galaxy S24 Plus Screen Replacement",
+        "url": "https://www.ifixit.com/Guide/Samsung+Galaxy+S24+Plus+Screen+Replacement/175393"
+      },
+      {
+        "title": "iFixit — Samsung Galaxy S24 Ultra Screen Replacement",
+        "url": "https://www.ifixit.com/Guide/Samsung+Galaxy+S24+Ultra+Screen+Replacement/175801"
+      },
+      {
+        "title": "iFixit — Samsung Galaxy S24 Ultra Battery Replacement",
+        "url": "https://www.ifixit.com/Guide/Samsung+Galaxy+S24+Ultra+Battery+Replacement/175800"
+      },
+      {
+        "title": "iFixit — Samsung Galaxy S24 Screen and Battery Assembly Replacement",
+        "url": "https://www.ifixit.com/Guide/Samsung+Galaxy+S24+Screen+and+Battery+Assembly+Replacement/175577"
+      }
+    ],
+    "checked": "2026-10-21"
+  },
+  {
+    "slug": "samsung-galaxy-z-flip",
+    "title": "Galaxy Z Flip3 / Flip4 / Flip5 / Flip6",
+    "category": "Модель",
+    "brand": "Samsung",
+    "deviceType": "Телефон",
+    "models": [
+      "Galaxy Z Flip3",
+      "Galaxy Z Flip 4",
+      "Galaxy Z Flip 5",
+      "Galaxy Z Flip 6"
+    ],
+    "body": "## Коротко\nРаскладушки с гибким внутренним экраном под заводской защитной плёнкой. Защита по Samsung: Z Flip3, Flip4, Flip5 — **IPX8** (от воды, без защиты от пыли), Z Flip6 — **IP48**. Внутри две батареи (у Flip3 и Flip4 — по гайдам iFixit).\n\n## Частые неисправности\nТреснувшая или отходящая плёнка внутреннего экрана, полосы и пятна на внутреннем экране — повреждение плёнки или гибкого дисплея, нужен осмотр. «Массовым браком» без модели и проверки не называть: подтверждённой сервисной программы по дефекту в проверенных источниках не найдено.\n\n## При приёме проверить\n- Плёнку внутреннего экрана (пузыри, трещины, отслоение у сгиба), полосы и пятна, работу сенсора по всей площади, особенно на сгибе.\n- Открывание и закрывание, внешний экран.\n- Если на телефоне One UI 5 и новее, предложите клиенту перед сдачей включить **Maintenance mode** («Режим обслуживания»: Настройки → Обслуживание устройства). Он прячет фото, контакты и сообщения в отдельной учётной записи; нужен заданный экран блокировки и свободное место (1,5 ГБ на 64-гигабайтных, 500 МБ на остальных). Выход — с вводом кода владельца; приложения, поставленные в режиме, удаляются.\n\n## Ремонт: на что обратить внимание\n- Заводскую защитную плёнку внутреннего (гибкого) экрана Samsung снимать не велит: снятие или неофициальная плёнка могут дать сбои сенсора и повреждение экрана. Повреждённую плёнку меняют в сервисном центре; Samsung предусматривает сервисную замену плёнки для некоторых Z-моделей.\n- Если плёнку всё же сняли — Samsung советует выключить «Чувствительность касания» (Настройки → Дисплей): сенсор откалиброван под плёнку.\n- Flip3 (iFixit): перед разборкой полностью разрядить батарею; батарей две — отключить обе; замена экрана в гайде iFixit — это сборка «экран + рамка» одной деталью.\n- Flip4 (iFixit): основная и вторая батареи; сначала отключить основную батарею и катушку зарядки; клей батарей размягчают изопропиловым спиртом.\n\n## Что сказать клиенту\n- «Не снимайте и не переклеивайте плёнку внутреннего экрана сами, не давите на сгиб».\n- «IPX8 — это защита от воды, но не от пыли и песка. После вскрытия заводскую защиту не обещаем».",
+    "sources": [
+      {
+        "title": "Samsung — Galaxy phones and tablets dust and water resistance (IP rating)",
+        "url": "https://www.samsung.com/us/support/answer/ANS10001610/"
+      },
+      {
+        "title": "Samsung — Precautions when removing the main screen protective film on the Galaxy Z Fold / Z Flip series",
+        "url": "https://www.samsung.com/latin_en/support/mobile-devices/precautions-when-removing-the-main-screen-protective-film-on-the-galaxy-z-fold-z-flip-series/"
+      },
+      {
+        "title": "Samsung Newsroom — Galaxy Z Fold6 / Z Flip6: durability and screen protector service",
+        "url": "https://news.samsung.com/us/three-reasons-you-should-switch-to-new-samsung-galaxy-z-fold6-galaxy-z-flip6/"
+      },
+      {
+        "title": "Samsung — Use Maintenance mode on your Galaxy phone or tablet",
+        "url": "https://www.samsung.com/us/support/answer/ANS10003675/"
+      },
+      {
+        "title": "iFixit — Samsung Galaxy Z Flip 3 Screen and Frame Assembly Replacement",
+        "url": "https://www.ifixit.com/Guide/Samsung+Galaxy+Z+Flip+3+Screen+and+Frame+Assembly+Replacement/163999"
+      },
+      {
+        "title": "iFixit — Samsung Galaxy Z Flip 4 Display Replacement",
+        "url": "https://www.ifixit.com/Guide/Samsung+Galaxy+Z+Flip+4+Display+Replacement/181528"
+      }
+    ],
+    "checked": "2026-10-21"
+  },
+  {
+    "slug": "samsung-galaxy-z-fold",
+    "title": "Galaxy Z Fold3 / Fold4 / Fold5 / Fold6",
+    "category": "Модель",
+    "brand": "Samsung",
+    "deviceType": "Телефон",
+    "models": [
+      "Galaxy Z Fold3",
+      "Galaxy Z Fold 4",
+      "Galaxy Z Fold 5",
+      "Galaxy Z Fold 6"
+    ],
+    "body": "## Коротко\nСкладные «книжки» с гибким внутренним экраном под заводской плёнкой. Защита по Samsung: Z Fold3, Fold4, Fold5 — **IPX8**, Z Fold6 — **IP48**. Для Z Fold6 Samsung выпускает официальное руководство по самостоятельному ремонту (Self-Repair, США).\n\n## Частые неисправности\nПовреждение плёнки внутреннего экрана, полосы и пятна на гибком экране — нужен осмотр. Подтверждённой сервисной программы по дефекту в проверенных источниках не найдено.\n\n## При приёме проверить\n- Плёнку внутреннего экрана, полосы и пятна, сенсор по всей площади и на сгибе.\n- Раскрытие до конца, внешний экран.\n- Если на телефоне One UI 5 и новее, предложите клиенту перед сдачей включить **Maintenance mode** («Режим обслуживания»: Настройки → Обслуживание устройства). Он прячет фото, контакты и сообщения в отдельной учётной записи; нужен заданный экран блокировки и свободное место (1,5 ГБ на 64-гигабайтных, 500 МБ на остальных). Выход — с вводом кода владельца; приложения, поставленные в режиме, удаляются.\n\n## Ремонт: на что обратить внимание\n- Заводскую защитную плёнку внутреннего (гибкого) экрана Samsung снимать не велит: снятие или неофициальная плёнка могут дать сбои сенсора и повреждение экрана. Повреждённую плёнку меняют в сервисном центре; Samsung предусматривает сервисную замену плёнки для некоторых Z-моделей.\n- Если плёнку всё же сняли — Samsung советует выключить «Чувствительность касания» (Настройки → Дисплей): сенсор откалиброван под плёнку.\n- Для Z Fold6 — официальное руководство Samsung Self-Repair; оригинальные детали Samsung продаёт через Encompass, на них ограниченная гарантия 90 дней. Samsung предупреждает, что некоторые детали (например, динамики) после замены требуют калибровки, и советует перед работой разряжать остаточное напряжение на платах по руководству.\n\n## Что сказать клиенту\n- «Не снимайте плёнку внутреннего экрана сами и не давите на сгиб».\n- «IPX8 — только от воды, не от пыли. После вскрытия заводскую защиту не обещаем».",
+    "sources": [
+      {
+        "title": "Samsung — Galaxy phones and tablets dust and water resistance (IP rating)",
+        "url": "https://www.samsung.com/us/support/answer/ANS10001610/"
+      },
+      {
+        "title": "Samsung — Precautions when removing the main screen protective film on the Galaxy Z Fold / Z Flip series",
+        "url": "https://www.samsung.com/latin_en/support/mobile-devices/precautions-when-removing-the-main-screen-protective-film-on-the-galaxy-z-fold-z-flip-series/"
+      },
+      {
+        "title": "Samsung Newsroom — Galaxy Z Fold6 / Z Flip6: durability and screen protector service",
+        "url": "https://news.samsung.com/us/three-reasons-you-should-switch-to-new-samsung-galaxy-z-fold6-galaxy-z-flip6/"
+      },
+      {
+        "title": "Samsung — Self-Repair (US)",
+        "url": "https://www.samsung.com/us/support/self-repair/"
+      },
+      {
+        "title": "Samsung — Use Maintenance mode on your Galaxy phone or tablet",
+        "url": "https://www.samsung.com/us/support/answer/ANS10003675/"
+      }
+    ],
+    "checked": "2026-10-21"
+  },
+  {
+    "slug": "xiaomi-redmi-note-10-pro",
+    "title": "Redmi Note 10 Pro / 10 Pro Max",
+    "category": "Модель",
+    "brand": "Xiaomi",
+    "deviceType": "Телефон",
+    "models": [
+      "Redmi Note 10 Pro",
+      "Redmi Note 10 Pro Max"
+    ],
+    "body": "## Коротко\nРейтинг **IP53** (mi.com): защита от брызг и пыли в лабораторных условиях. У модели была официальная региональная (Индия) расширенная гарантия на плату и фронтальную камеру.\n\n## Частые неисправности\n- **Внезапно не включается / не реагирует на зарядку, не работает фронтальная камера** → у части устройств — неисправность материнской платы или селфи-камеры → диагностика платы и питания. В мае 2023 Xiaomi India продлила гарантию до 2 лет для Redmi Note 10 Pro, Note 10 Pro Max (а также Mi 11 Ultra и POCO X3 Pro) по проблемам селфи-камеры и материнской платы — для купленных в Индии за последние 2 года. Объявление было в Discord, на страницах гарантии его на тот момент не было.\n\n> Зарубежная сервисная программа не означает бесплатный ремонт в России. Клиенту бесплатную замену не обещать.\n\n## При приёме проверить\n- Реакцию на исправную зарядку, вибрацию, индикацию.\n- Фронтальную камеру.\n- Точное название модели — из «Настройки → О телефоне».\n- Не прошивать и не сбрасывать телефон до диагностики, если клиенту важны данные.\n\n## Ремонт: на что обратить внимание\nПо гайдам iFixit:\n- Сначала вынуть лоток SIM. Вскрытие — **сзади**: заднее стекло на клею; поверхность не гладкая — для присоски наклеить скотч или смочить её.\n- Под стеклом — средняя рамка на винтах и **пластиковых защёлках**. Рамку не снимать сразу: кнопки соединены с платой шлейфом; у кнопки громкости медиатор дальше не вести — рядом шлейф.\n- Отключить батарею и шлейф дисплея. Экран снимается **спереди**; у фронтальной камеры — только кончиком медиатора; шлейф продет через рамку — экран до конца не тянуть.\n- Батарея на клеевых язычках, бывает нужна сила; помогает нагрев центра экрана.\n\n## Что сказать клиенту\n- «Если не включается — не прошивайте, сначала диагностика платы и питания».\n- «IP53 — только брызги. Погружение в воду не выдерживает».",
+    "sources": [
+      {
+        "title": "Xiaomi — Redmi Note 10 Pro: характеристики",
+        "url": "https://www.mi.com/global/product/redmi-note-10-pro/specs/"
+      },
+      {
+        "title": "GSMArena — Xiaomi India extends warranty to two years on some of its older models (27.05.2023)",
+        "url": "https://m.gsmarena.com/xiaomi_india_extends_warranty_to_two_years_on_some_of_its_older_models-news-58697.php"
+      },
+      {
+        "title": "iFixit — Xiaomi Redmi Note 10 Pro Screen Replacement",
+        "url": "https://www.ifixit.com/Guide/Xiaomi+Redmi+Note+10+Pro+Screen+Replacement/147147"
+      },
+      {
+        "title": "iFixit — Xiaomi Redmi Note 10 Pro Battery Replacement",
+        "url": "https://www.ifixit.com/Guide/Xiaomi+Redmi+Note+10+Pro+Battery+Replacement/146954"
+      },
+      {
+        "title": "iFixit — Xiaomi Redmi Note 10 Pro Rear Glass Replacement",
+        "url": "https://www.ifixit.com/Guide/Xiaomi+Redmi+Note+10+Pro+Rear+Glass+Replacement/146940"
+      }
+    ],
+    "checked": "2026-10-21"
+  },
+  {
+    "slug": "xiaomi-redmi-note-10",
+    "title": "Redmi Note 10 / Note 10 5G",
+    "category": "Модель",
+    "brand": "Xiaomi",
+    "deviceType": "Телефон",
+    "models": [
+      "Redmi Note 10",
+      "Redmi Note 10 5G"
+    ],
+    "body": "## Коротко\nДва разных аппарата: Redmi Note 10 (на mi.com — **IP53**) и Redmi Note 10 5G. Гайды iFixit по разборке есть только для **Note 10 5G** — на обычный Note 10 их не переносить без проверки.\n\n## Частые неисправности\nПодтверждённой массовой аппаратной программы для обычного Note 10 не найдено. В части сообщений о продлении гарантии Xiaomi India (2023, плата и селфи-камера) упоминается и Redmi Note 10, в других его нет — *требует проверки*.\n\n## При приёме проверить\n- Точное название модели — из «Настройки → О телефоне».\n- Не прошивать и не сбрасывать телефон до диагностики, если клиенту важны данные.\n\n## Ремонт: на что обратить внимание\nПо гайдам iFixit для **Note 10 5G**:\n- Вскрытие — **сзади**: задняя крышка на клею. Затем крышка камер на винтах, винты средней рамки, лоток SIM; рамка на тугих пластиковых защёлках — перед снятием освободить шлейф кнопок, чтобы не порвать.\n- Батарея на двух полосках клея «потяни и сними»: тянуть, под батарею не поддевать; если полоска оборвалась — спирт под край.\n- Экран снимается **спереди**, клей очень сильный; у фронтальной камеры не глубже 2–3 мм. Шлейфы дисплея и дигитайзера продеты через корпус и слегка приклеены — экран до конца не тянуть.\n\n## Что сказать клиенту\n- «IP53 — защита только от брызг, не от погружения».",
+    "sources": [
+      {
+        "title": "Xiaomi — Redmi Note 10: характеристики",
+        "url": "https://www.mi.com/global/product/redmi-note-10/specs/"
+      },
+      {
+        "title": "GSMArena — Xiaomi India extends warranty to two years on some of its older models (27.05.2023)",
+        "url": "https://m.gsmarena.com/xiaomi_india_extends_warranty_to_two_years_on_some_of_its_older_models-news-58697.php"
+      },
+      {
+        "title": "Gizchina — Xiaomi extends the warranty to two years for five smartphones",
+        "url": "https://www.gizchina.com/2023/05/30/xiaomi-extends-the-warranty-to-two-years-for-five-smartphones/"
+      },
+      {
+        "title": "iFixit — Xiaomi Redmi Note 10 5G Screen Replacement",
+        "url": "https://www.ifixit.com/Guide/Xiaomi+Redmi+Note+10+5G+Screen+Replacement/147787"
+      },
+      {
+        "title": "iFixit — Xiaomi Redmi Note 10 5G Battery Replacement",
+        "url": "https://www.ifixit.com/Guide/Xiaomi+Redmi+Note+10+5G+Battery+Replacement/147786"
+      },
+      {
+        "title": "iFixit — Xiaomi Redmi Note 10 5G Back Cover Replacement",
+        "url": "https://www.ifixit.com/Guide/Xiaomi+Redmi+Note+10+5G+Back+Cover+Replacement/147781"
+      }
+    ],
+    "checked": "2026-10-21"
+  },
+  {
+    "slug": "xiaomi-redmi-note-11",
+    "title": "Redmi Note 11 / 11 Pro",
+    "category": "Модель",
+    "brand": "Xiaomi",
+    "deviceType": "Телефон",
+    "models": [
+      "Redmi Note 11",
+      "Redmi Note 11 Pro"
+    ],
+    "body": "## Коротко\nГайды iFixit есть для **Redmi Note 11 Pro** (стекло, батарея, плата зарядки, экран); для обычного Note 11 — нет. Продление гарантии Xiaomi India 2023 года эту линейку не включало.\n\n## Частые неисправности\nПодтверждённой массовой аппаратной программы в проверенных источниках не найдено.\n\n## При приёме проверить\n- Точное название модели — из «Настройки → О телефоне».\n- Не прошивать и не сбрасывать телефон до диагностики, если клиенту важны данные.\n\n## Ремонт: на что обратить внимание\nПо гайдам iFixit для **Note 11 Pro**:\n- Вскрытие — **сзади**: заднее стекло на клею (режут нижний и левый края).\n- Средняя рамка на винтах и тугих пластиковых защёлках; к плате она подключена шлейфом — сначала отключить.\n- Батарея на язычках, у неё несколько шлейфов; если не поднимается — нагреть экран 2 минуты.\n- Для замены экрана снимают ещё громкий динамик (на защёлках), антенный кабель, межплатный шлейф и плату зарядки. Экран — **спереди**; у фронтальной камеры не глубже 2–3 мм; шлейф продет через рамку.\n- Задние камеры чуть выступают — при снятии экрана подложить безворсовую ткань.\n\n## Что сказать клиенту\n- «Назовите точную модель из настроек: у Note 11 и Note 11 Pro разное устройство».",
+    "sources": [
+      {
+        "title": "GSMArena — Xiaomi India extends warranty to two years on some of its older models (27.05.2023)",
+        "url": "https://m.gsmarena.com/xiaomi_india_extends_warranty_to_two_years_on_some_of_its_older_models-news-58697.php"
+      },
+      {
+        "title": "Xiaomi — Global Support",
+        "url": "https://www.mi.com/global/support/"
+      },
+      {
+        "title": "iFixit — Xiaomi Redmi Note 11 Pro Screen Replacement",
+        "url": "https://www.ifixit.com/Guide/Xiaomi+Redmi+Note+11+Pro+Screen+Replacement/152937"
+      },
+      {
+        "title": "iFixit — Xiaomi Redmi Note 11 Pro Battery Replacement",
+        "url": "https://www.ifixit.com/Guide/Xiaomi+Redmi+Note+11+Pro+Battery+Replacement/152936"
+      },
+      {
+        "title": "iFixit — Xiaomi Redmi Note 11 Pro Rear Glass Replacement",
+        "url": "https://www.ifixit.com/Guide/Xiaomi+Redmi+Note+11+Pro+Rear+Glass+Replacement/152813"
+      }
+    ],
+    "checked": "2026-10-21"
+  },
+  {
+    "slug": "xiaomi-redmi-note-12",
+    "title": "Redmi Note 12 / Note 12 5G",
+    "category": "Модель",
+    "brand": "Xiaomi",
+    "deviceType": "Телефон",
+    "models": [
+      "Redmi Note 12",
+      "Redmi Note 12 5G"
+    ],
+    "body": "## Коротко\nРейтинг **IP53** (mi.com, и для Redmi Note 12, и для Note 12 5G). Xiaomi прямо пишет: гарантия не покрывает повреждения жидкостью в условиях сверх теста IP53. Гайдов iFixit по разборке нет.\n\n## Частые неисправности\nПодтверждённой массовой аппаратной программы в проверенных источниках не найдено.\n\n## При приёме проверить\n- Следы жидкости — записать: залитие сверх IP53 не гарантийное.\n- Точное название модели — из «Настройки → О телефоне».\n- Не прошивать и не сбрасывать телефон до диагностики, если клиенту важны данные.\n\n## Что сказать клиенту\n- «IP53 — защита от брызг и пыли в лаборатории, не от погружения. Повреждение водой гарантия Xiaomi не покрывает».",
+    "sources": [
+      {
+        "title": "Xiaomi — Redmi Note 12: характеристики",
+        "url": "https://www.mi.com/global/product/redmi-note-12/specs/"
+      },
+      {
+        "title": "Xiaomi — Redmi Note 12 5G: характеристики",
+        "url": "https://www.mi.com/global/product/redmi-note-12-5g/specs/"
+      },
+      {
+        "title": "Xiaomi — Global Support",
+        "url": "https://www.mi.com/global/support/"
+      }
+    ],
+    "checked": "2026-10-21"
+  },
+  {
+    "slug": "xiaomi-redmi-note-13",
+    "title": "Redmi Note 13 / 13 Pro",
+    "category": "Модель",
+    "brand": "Xiaomi",
+    "deviceType": "Телефон",
+    "models": [
+      "Redmi Note 13",
+      "Redmi Note 13 5G",
+      "Redmi Note 13 Pro",
+      "Redmi Note 13 Pro 5G"
+    ],
+    "body": "## Коротко\nРейтинг **IP54** на mi.com у Redmi Note 13, Note 13 5G, Note 13 Pro и Note 13 Pro 5G — защита от брызг и пыли. Xiaomi предупреждает: защита со временем слабеет; полностью в воду не погружать, морскую и хлорированную воду и напитки не допускать. Гайдов iFixit нет.\n\n## Частые неисправности\nПодтверждённой массовой аппаратной программы в проверенных источниках не найдено.\n\n## При приёме проверить\n- Точное название модели — из «Настройки → О телефоне».\n- Не прошивать и не сбрасывать телефон до диагностики, если клиенту важны данные.\n\n## Что сказать клиенту\n- «IP54 — это брызги, а не купание. После вскрытия заводскую защиту не обещаем».",
+    "sources": [
+      {
+        "title": "Xiaomi — Redmi Note 13: характеристики",
+        "url": "https://www.mi.com/global/product/redmi-note-13/specs/"
+      },
+      {
+        "title": "Xiaomi — Redmi Note 13 5G: характеристики",
+        "url": "https://www.mi.com/global/product/redmi-note-13-5g/specs/"
+      },
+      {
+        "title": "Xiaomi — Redmi Note 13 Pro: характеристики",
+        "url": "https://www.mi.com/global/product/redmi-note-13-pro/specs/"
+      },
+      {
+        "title": "Xiaomi — Redmi Note 13 Pro 5G: характеристики",
+        "url": "https://www.mi.com/global/product/redmi-note-13-pro-5g/specs/"
+      }
+    ],
+    "checked": "2026-10-21"
+  },
+  {
+    "slug": "xiaomi-poco-x3-pro",
+    "title": "POCO X3 Pro",
+    "category": "Модель",
+    "brand": "Xiaomi",
+    "deviceType": "Телефон",
+    "models": [
+      "POCO X3 Pro"
+    ],
+    "body": "## Коротко\nРейтинг **IP53**, защитное стекло Gorilla Glass 6 (po.co). Самая известная проблема — отказ материнской платы: POCO/Xiaomi India дважды продлевали гарантию на модель. При замене экрана по гайду iFixit **снимают батарею**.\n\n## Частые неисправности\n- **Внезапно выключился и не включается, не реагирует на зарядку** → у части устройств — неисправность материнской платы → диагностика платы и питания. В 2022 году глава POCO India объявил +6 месяцев гарантии всем владельцам X3 Pro после жалоб на платы; в мае 2023 Xiaomi India дала 2 года гарантии на проблемы платы и селфи-камеры (купленные в Индии за последние 2 года).\n\n> Зарубежная сервисная программа не означает бесплатный ремонт в России. Клиенту бесплатную замену не обещать.\n\n## При приёме проверить\n- Реакцию на исправную зарядку, вибрацию, индикацию; нагрев.\n- Фронтальную камеру.\n- Точное название модели — из «Настройки → О телефоне».\n- Не прошивать и не сбрасывать телефон до диагностики, если клиенту важны данные.\n\n## Ремонт: на что обратить внимание\nПо гайдам iFixit:\n- Вскрытие — **сзади**: задняя крышка на клею.\n- Крышка над платой на винтах; отключить батарею, шлейф кнопок и межплатный шлейф. Батарея на язычках — может понадобиться нагрев центра экрана.\n- Экран: сначала снимают батарею и наклейку под ней, затем отключают шлейф дисплея (слегка приклеен к рамке). Экран — **спереди**; клей очень крепкий, пока не зайдёшь под панель; у фронтальной камеры — кончиком медиатора; шлейф продет через рамку.\n- Блок задних камер выступает — подложить безворсовую ткань.\n\n## Что сказать клиенту\n- «Если не включается — не прошивайте, нужна диагностика платы».\n- «IP53 — это брызги и пыль. По условиям POCO, повреждения от пыли и погружения гарантия не покрывает».",
+    "sources": [
+      {
+        "title": "POCO — POCO X3 Pro: характеристики",
+        "url": "https://www.po.co/global/product/poco-x3-pro/specs/"
+      },
+      {
+        "title": "POCO India — Special Extended Warranty",
+        "url": "https://www.poco.in/extended-warranty"
+      },
+      {
+        "title": "FoneArena — POCO X3 Pro users get extra 6 months warranty in India",
+        "url": "https://www.fonearena.com/blog/367269/poco-x3-pro-extra-6-months-warranty-poco-f4-5g-2-years-warranty.html/amp"
+      },
+      {
+        "title": "GSMArena — Xiaomi India extends warranty to two years on some of its older models (27.05.2023)",
+        "url": "https://m.gsmarena.com/xiaomi_india_extends_warranty_to_two_years_on_some_of_its_older_models-news-58697.php"
+      },
+      {
+        "title": "iFixit — Poco X3 Pro Screen Replacement",
+        "url": "https://www.ifixit.com/Guide/Poco+X3+Pro+Screen+Replacement/146770"
+      },
+      {
+        "title": "iFixit — Poco X3 Pro Battery Replacement",
+        "url": "https://www.ifixit.com/Guide/Poco+X3+Pro+Battery+Replacement/146769"
+      },
+      {
+        "title": "iFixit — Poco X3 Pro Back Cover Replacement",
+        "url": "https://www.ifixit.com/Guide/Poco+X3+Pro+Back+Cover+Replacement/146767"
+      }
+    ],
+    "checked": "2026-10-21"
+  },
+  {
+    "slug": "xiaomi-poco-x3-nfc",
+    "title": "POCO X3 NFC",
+    "category": "Модель",
+    "brand": "Xiaomi",
+    "deviceType": "Телефон",
+    "models": [
+      "POCO X3 NFC",
+      "POCO X3"
+    ],
+    "body": "## Коротко\nНе путать с POCO X3 Pro: продления гарантии Xiaomi/POCO India по плате касались **X3 Pro**, POCO X3 NFC в этих списках нет. Гайдов iFixit по разборке X3 NFC нет.\n\n## Частые неисправности\nПодтверждённой массовой аппаратной программы для POCO X3 NFC в проверенных источниках не найдено.\n\n## При приёме проверить\n- Точную модель («О телефоне»): X3 NFC или X3 Pro.\n- Точное название модели — из «Настройки → О телефоне».\n- Не прошивать и не сбрасывать телефон до диагностики, если клиенту важны данные.\n\n## Что сказать клиенту\n- «Расскажите, что было перед поломкой: падение, вода, обновление. Не сбрасывайте телефон, если важны данные».",
+    "sources": [
+      {
+        "title": "GSMArena — Xiaomi India extends warranty to two years on some of its older models (27.05.2023)",
+        "url": "https://m.gsmarena.com/xiaomi_india_extends_warranty_to_two_years_on_some_of_its_older_models-news-58697.php"
+      },
+      {
+        "title": "FoneArena — POCO X3 Pro users get extra 6 months warranty in India",
+        "url": "https://www.fonearena.com/blog/367269/poco-x3-pro-extra-6-months-warranty-poco-f4-5g-2-years-warranty.html/amp"
+      },
+      {
+        "title": "Xiaomi — Global Support",
+        "url": "https://www.mi.com/global/support/"
+      }
+    ],
+    "checked": "2026-10-21"
+  },
+  {
+    "slug": "xiaomi-poco-x5",
+    "title": "POCO X5 / X5 Pro",
+    "category": "Модель",
+    "brand": "Xiaomi",
+    "deviceType": "Телефон",
+    "models": [
+      "POCO X5",
+      "POCO X5 5G",
+      "POCO X5 Pro",
+      "POCO X5 Pro 5G"
+    ],
+    "body": "## Коротко\nPOCO X5 5G — рейтинг **IP53** (mi.com). POCO X5 Pro 5G — первый в X-серии с гибким AMOLED-экраном (po.co); IP-рейтинга на его странице нет. Гайдов iFixit нет.\n\n## Частые неисправности\nПодтверждённой массовой аппаратной программы в проверенных источниках не найдено.\n\n## При приёме проверить\n- Точную модель: X5 или X5 Pro — у них разные экраны.\n- Точное название модели — из «Настройки → О телефоне».\n- Не прошивать и не сбрасывать телефон до диагностики, если клиенту важны данные.\n\n## Что сказать клиенту\n- «IP53 у X5 — только брызги. У X5 Pro рейтинга на странице производителя мы не нашли — защиту от воды не обещаем».",
+    "sources": [
+      {
+        "title": "Xiaomi — POCO X5 5G: характеристики",
+        "url": "https://www.mi.com/global/product/poco-x5-5g/specs/"
+      },
+      {
+        "title": "POCO — POCO X5 Pro 5G",
+        "url": "https://www.po.co/global/product/poco-x5-pro-5g/"
+      },
+      {
+        "title": "Xiaomi — Global Support",
+        "url": "https://www.mi.com/global/support/"
+      }
+    ],
+    "checked": "2026-10-21"
+  },
+  {
+    "slug": "xiaomi-poco-f3-f4-f5",
+    "title": "POCO F3 / F4 / F5",
+    "category": "Модель",
+    "brand": "Xiaomi",
+    "deviceType": "Телефон",
+    "models": [
+      "POCO F3",
+      "POCO F4",
+      "POCO F5"
+    ],
+    "body": "## Коротко\nAMOLED-экраны (po.co); у F4 и F5 — Gorilla Glass 5. IP-рейтинга на страницах po.co не найдено. Гайды iFixit есть только для **POCO F3**.\n\n## Частые неисправности\nПодтверждённой массовой аппаратной программы в проверенных источниках не найдено.\n\n## При приёме проверить\n- Точное название модели — из «Настройки → О телефоне».\n- Не прошивать и не сбрасывать телефон до диагностики, если клиенту важны данные.\n\n## Ремонт: на что обратить внимание\nПо гайдам iFixit для **POCO F3**:\n- Вскрытие — **сзади**: заднее стекло на клею. Шлейфы кнопок тоже приклеены — при резке клея не задеть.\n- Крышка над платой на винтах и ещё подключена к плате — сразу не снимать.\n- Разъём батареи закрыт графитовой фольгой — отогнуть или приклеить скотчем. Батарея на клею — нагреть экран; снятую батарею повторно не ставить.\n- Для экрана снимают громкий динамик и отключают антенный кабель. Экран — **спереди**; шлейф продет через рамку и может быть приклеен изнутри — экран до конца не тянуть; при замене экрана — новый вырезной клей.\n\n## Что сказать клиенту\n- «Рейтинга влагозащиты у производителя мы не нашли — защиту от воды не обещаем».",
+    "sources": [
+      {
+        "title": "POCO — POCO F3",
+        "url": "https://www.po.co/global/product/poco-f3/"
+      },
+      {
+        "title": "POCO — POCO F4",
+        "url": "https://www.po.co/global/product/poco-f4/"
+      },
+      {
+        "title": "POCO — POCO F5",
+        "url": "https://www.po.co/global/product/poco-f5/"
+      },
+      {
+        "title": "iFixit — Xiaomi Poco F3 Screen Replacement",
+        "url": "https://www.ifixit.com/Guide/Xiaomi+Poco+F3+Screen+Replacement/152594"
+      },
+      {
+        "title": "iFixit — Poco F3 Battery Replacement",
+        "url": "https://www.ifixit.com/Guide/Poco+F3+Battery+Replacement/152593"
+      },
+      {
+        "title": "iFixit — Xiaomi Poco F3 Rear Glass Replacement",
+        "url": "https://www.ifixit.com/Guide/Xiaomi+Poco+F3+Rear+Glass+Replacement/152590"
+      }
+    ],
+    "checked": "2026-10-21"
+  },
+  {
+    "slug": "honor-x9c",
+    "title": "HONOR X9c",
+    "category": "Модель",
+    "brand": "Honor",
+    "deviceType": "Телефон",
+    "models": [
+      "Honor X9c"
+    ],
+    "body": "## Коротко\nПо странице HONOR: рейтинг **IP65M** (IEC 60529, лаборатория), батарея 6600 мА·ч типичная (6500 номинальная), выдерживает падение с 2 м на гладкий гранит в лаборатории HONOR. Сам HONOR пишет, что телефон «не профессионально водонепроницаем», защита со временем слабеет, а **повреждение от погружения в жидкость гарантией не покрывается**.\n\n## Частые неисправности\nПодтверждённой массовой аппаратной сервисной программы в проверенных источниках не найдено.\n\n## При приёме проверить\n- Следы жидкости — записать: погружение не гарантийное.\n- Мокрый телефон не заряжать (требование HONOR).\n- При нагреве, запахе или вздутии — не включать и не заряжать.\n\n## Что сказать клиенту\n- «Защита от падений и воды — лабораторные данные; HONOR сам пишет, что при падении риск повреждения остаётся».\n- «Залитие водой гарантия HONOR не покрывает».",
+    "sources": [
+      {
+        "title": "HONOR — HONOR X9c",
+        "url": "https://www.honor.com/global/phones/honor-x9c/"
+      },
+      {
+        "title": "HONOR — Support",
+        "url": "https://www.honor.com/global/support/"
+      }
+    ],
+    "checked": "2026-10-21"
+  },
+  {
+    "slug": "honor-x9b",
+    "title": "HONOR X9b",
+    "category": "Модель",
+    "brand": "Honor",
+    "deviceType": "Телефон",
+    "models": [
+      "Honor X9b"
+    ],
+    "body": "## Коротко\nПо странице HONOR: AMOLED 6,78″ с противоударной конструкцией Ultra-Bounce Anti-Drop Display, батарея 5800 мА·ч типичная (5700 номинальная). Рейтинга влагозащиты на странице нет. HONOR оговаривает: при падении риск повреждения всё равно остаётся.\n\n## Частые неисправности\nПодтверждённой массовой аппаратной сервисной программы в проверенных источниках не найдено.\n\n## При приёме проверить\n- Экран после падения: «противоударный» не значит неубиваемый.\n- При нагреве, запахе или вздутии — не включать и не заряжать.\n\n## Что сказать клиенту\n- «Рейтинга защиты от воды на странице производителя нет — защиту от воды не обещаем».",
+    "sources": [
+      {
+        "title": "HONOR — HONOR X9b 5G",
+        "url": "https://www.honor.com/global/phones/honor-x9b/"
+      },
+      {
+        "title": "HONOR — Support",
+        "url": "https://www.honor.com/global/support/"
+      }
+    ],
+    "checked": "2026-10-21"
+  },
+  {
+    "slug": "honor-x8",
+    "title": "HONOR X8",
+    "category": "Модель",
+    "brand": "Honor",
+    "deviceType": "Телефон",
+    "models": [
+      "Honor X8"
+    ],
+    "body": "## Коротко\nПо странице HONOR: экран 6,7″ до 90 Гц, быстрая зарядка 22,5 Вт — только с зарядкой и кабелем HONOR. Защиты от воды, пыли и падений производитель не заявляет.\n\n## Частые неисправности\nПодтверждённой массовой аппаратной сервисной программы в проверенных источниках не найдено.\n\n## При приёме проверить\n- Жалоба на медленную зарядку: 22,5 Вт — только с комплектом HONOR; проверить на нём.\n- При нагреве, запахе или вздутии — не включать и не заряжать.\n\n## Что сказать клиенту\n- «Защиту от воды производитель не заявляет — не обещаем её и мы».",
+    "sources": [
+      {
+        "title": "HONOR — HONOR X8",
+        "url": "https://www.honor.com/global/phones/honor-x8/"
+      },
+      {
+        "title": "HONOR — Support",
+        "url": "https://www.honor.com/global/support/"
+      }
+    ],
+    "checked": "2026-10-21"
+  },
+  {
+    "slug": "realme-c-series",
+    "title": "realme C-серия",
+    "category": "Модель",
+    "brand": "realme",
+    "deviceType": "Телефон",
+    "models": [
+      "Realme C30",
+      "Realme C51",
+      "Realme C53",
+      "Realme C55"
+    ],
+    "body": "## Коротко\nБюджетная серия. Гайдов iFixit по разборке C-серии нет; официальная поддержка realme начинает проверку зарядки с зарядных аксессуаров.\n\n## Частые неисправности\nПодтверждённой массовой проблемы модели в проверенных источниках не найдено. «Не заряжается» без диагностики массовой проблемой не называть: причина может быть в кабеле, блоке, загрязнённом разъёме, батарее или внутреннем узле.\n\n## При приёме проверить\n- «Не заряжается»: сначала другой исправный кабель и блок; осмотреть разъём (не чистить металлом), люфт штекера, нагрев.\n\n## Что сказать клиенту\n- «Проверьте другой исправный кабель и блок. Если зарядки нет, разъём шатается или корпус греется — приходите на диагностику».",
+    "sources": [
+      {
+        "title": "realme — How to Fix the Charging Malfunction",
+        "url": "https://www.realme.com/global/support/kw/doc/2020778"
+      }
+    ],
+    "checked": "2026-10-21"
+  }
+]

@@ -1,0 +1,59 @@
+/* Стили вкладки «kb» (База знаний). Общие компоненты — в base.css. */
+.kb-own { display:flex; gap:8px; flex-wrap:wrap; }
+.kb-left { justify-content:flex-start; }
+.kb-empty p { margin:0; max-width:640px; line-height:1.55; }
+.kb-tools .kb-q { flex:1; min-width:220px; max-width:520px; }
+.kb-chips { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:10px; }
+.kb-model { display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:14px; padding:10px 14px; border-radius:var(--radius);
+  background:var(--orange-soft); border:1px solid var(--orange-line); }
+.kb-count { margin:12px 0 8px; }
+.kb-cards { display:grid; grid-template-columns:repeat(auto-fill, minmax(240px, 1fr)); gap:12px; }
+.kb-card { display:flex; flex-direction:column; gap:6px; text-align:left; padding:14px 16px; border:1px solid var(--line); border-radius:var(--radius);
+  background:var(--card); color:var(--text); font:inherit; cursor:pointer; box-shadow:var(--shadow); transition:box-shadow .2s, transform .2s, border-color .2s; }
+.kb-card:hover { transform:translateY(-2px); box-shadow:var(--shadow-hover); border-color:var(--orange-line); }
+.kb-card:focus-visible { outline:none; box-shadow:var(--ring); border-color:var(--orange); }
+.kb-ct { font:700 16px/1.3 var(--serif); color:var(--navy); }
+.kb-cm { font-size:13px; color:var(--text); }
+.kb-cmeta { font-size:12px; color:var(--muted); }
+
+/* статья */
+.kb-art { max-width:880px; }
+.kb-ah { display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:10px; }
+.kb-gap { flex:1; }
+.kb-back { border:1px solid var(--line); background:var(--card); color:var(--navy); width:32px; height:32px; border-radius:8px; font-size:18px; line-height:1;
+  cursor:pointer; flex:none; transition:background .15s, border-color .15s; }
+.kb-back:hover { background:var(--orange-soft); border-color:var(--orange); }
+.kb-back:focus-visible { outline:none; box-shadow:var(--ring); }
+.kb-meta { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:14px; }
+.kb-body { line-height:1.6; overflow-wrap:anywhere; }
+.kb-body > :first-child { margin-top:0; }
+.kb-body > :last-child { margin-bottom:0; }
+.kb-body h3 { margin:22px 0 8px; font-size:18px; }
+.kb-body h4 { margin:16px 0 6px; font:700 15px var(--sans); color:var(--navy); }
+.kb-body p { margin:8px 0; }
+.kb-body ul, .kb-body ol { padding-left:22px; margin:8px 0; }
+.kb-body li { margin:4px 0; }
+.kb-body code { background:var(--navy-soft); border:1px solid var(--line); border-radius:4px; padding:1px 5px; font-size:13px; }
+.kb-body blockquote { margin:10px 0; padding:8px 14px; border-left:3px solid var(--orange); background:var(--orange-soft); border-radius:0 8px 8px 0; }
+.kb-body blockquote p { margin:4px 0; }
+.kb-tw { overflow-x:auto; margin:10px 0; border:1px solid var(--line); border-radius:8px; }
+.kb-tw th { background:var(--navy-soft); }
+.kb-tw th, .kb-tw td { white-space:normal; vertical-align:top; padding:8px 10px; }
+.kb-src ol { margin:0; padding-left:22px; line-height:1.8; }
+.kb-src a { overflow-wrap:anywhere; }
+.kb-foot { margin-top:10px; }
+
+/* редактор */
+.kb-md { width:100%; font:13px/1.5 ui-monospace, Consolas, monospace; resize:vertical; }
+.kb-prev { border:1px dashed var(--line-strong); border-radius:8px; padding:12px 14px; min-height:60px; }
+
+@media (max-width:600px) {
+  .kb-tools .kb-q { min-width:0; max-width:none; width:100%; }
+  .kb-cards { grid-template-columns:minmax(0, 1fr); }
+}
+
+/* сводка «Загрузить / обновить стартовые статьи» */
+.kb-plan { list-style:none; margin:4px 0 14px; padding:0; display:flex; flex-direction:column; gap:10px; min-width:min(460px, 100%); }
+.kb-plan > li { display:flex; flex-direction:column; gap:6px; }
+.kb-titles { margin:0; padding-left:20px; max-height:140px; overflow:auto; font-size:13px; color:var(--muted); }
+.kb-titles li { margin:2px 0; }

@@ -1,0 +1,10 @@
+/* Стили вкладки «tasks». Общие компоненты — в base.css. */
+.task-f { padding:6px 14px; font-size:14px; }
+.task-f b { margin-left:4px; opacity:.8; }
+.task-mine { margin-left:8px; }
+.tasks-t .linklike { border:0; background:none; padding:0; color:var(--text); font:inherit; font-weight:600; cursor:pointer; text-align:left; }
+.tasks-t .linklike:hover { color:var(--orange-deep); text-decoration:underline; }
+.tasks-t td.task-title { white-space:normal; min-width:220px; max-width:420px; }
+.tasks-t .task-desc { white-space:pre-line; margin-top:2px; }
+.tasks-t tr.late td { background:color-mix(in srgb, var(--danger) 8%, var(--card)); }
+.tasks-t tr.late td:first-child { box-shadow:inset 3px 0 0 var(--danger); }

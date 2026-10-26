@@ -1,0 +1,15 @@
+/* Стили вкладки «home». Общие компоненты — в base.css. */
+.home-cards .card.home-bad { box-shadow:inset 4px 0 0 var(--danger), var(--shadow); }
+.home-cards .card.home-bad .v { color:var(--danger); }
+.home-cards .card.home-warn { box-shadow:inset 4px 0 0 var(--warn), var(--shadow); }
+.home-cards .card.home-warn .v { color:var(--warn); }
+.home-leads { box-shadow:inset 4px 0 0 var(--orange), var(--shadow); }
+.home-lists { display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap:0 16px; }
+.home-lists .sect { min-width:0; }
+.home-red { color:var(--danger); white-space:nowrap; }
+.home-amber { color:var(--warn); white-space:nowrap; }
+@media (max-width:720px) {
+  .home-cards { grid-template-columns:repeat(2, minmax(0, 1fr)); }
+  .home-cards .card { padding:10px 12px; }
+  .home-cards .card .v { font-size:19px; }
+}
