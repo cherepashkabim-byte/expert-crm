@@ -223,5 +223,20 @@ function logOrderItem(e, kind, deleted, text, orderId) {
   }
 }
 
+// Точка заявки с сайта: id или текст («Советский 24», «пр-т Шахтёров, 83») — ищется по названию и адресу точки.
+// Не нашлась или подходит несколько — '' (заявка общая, её разбирает владелец).
+function findLeadPoint(app, text) {
+  const s = String(text || '').trim();
+  if (!s) return '';
+  try { return app.findRecordById('points', s).id; } catch (_) { /* не id — ищем по тексту */ }
+  const key = (v) => String(v || '').toLowerCase().replace(/ё/g, 'е').replace(/корпус/g, 'к')
+    .replace(/проспект|пр-т|пр\.|улица|ул\./g, ' ').replace(/[^a-zа-я0-9]+/g, '');
+  const q = key(s);
+  if (q.length < 3) return '';
+  const hits = app.findAllRecords('points').filter((p) => [p.getString('name'), p.getString('address')]
+    .some((v) => { const k = key(v); return k && (k.includes(q) || q.includes(k)); }));
+  return hits.length === 1 ? hits[0].id : '';
+}
+
 module.exports = { moneyText, orderLogText, logOrderItem, authUserId, authRole, deviceName, snapshot, writeLog, logDiff, phoneDigits, phoneValid, PHONE_ERR, notifyReady, notifyRemind, addStock,
-  defaultPointId, checkPartPoint, monthBounds, isClosedDate, assertOpen, MONTH_CLOSED, ORDER_MONEY };
+  defaultPointId, checkPartPoint, monthBounds, isClosedDate, assertOpen, MONTH_CLOSED, ORDER_MONEY, findLeadPoint };

@@ -50,7 +50,8 @@ routerAdd('POST', '/api/expert/transfer', (e) => {
 }, $apis.requireAuth('users'));
 
 // --- POST /api/expert/lead — публичная заявка с сайта ---
-// {name, phone, device, problem, point?, website} — website — скрытое поле-ловушка: заполнено → «принято», но не сохраняется.
+// {name, phone, device, problem, point?, website}. point — id или адрес точки текстом (findLeadPoint); не задан или не найден —
+// заявка общая (видит владелец). website — скрытое поле-ловушка: заполнено → «принято», но не сохраняется.
 routerAdd('POST', '/api/expert/lead', (e) => {
   const lib = require(`${__hooks}/lib/expert.js`);
   const body = e.requestInfo().body || {};
@@ -63,7 +64,11 @@ routerAdd('POST', '/api/expert/lead', (e) => {
 
   // IP: e.realIP() — адрес TCP-соединения; X-Forwarded-For / X-Real-IP учитываются, только если они заданы
   // в админке (Settings → Trusted proxy headers). За nginx/Cloudflare без этой настройки все заявки придут с IP прокси.
-  const ip = e.realIP();
+  // Сайт пересылает заявки со своего хостинга (send-lead.php): с заголовком X-Lead-Key = CRM_LEAD_KEY из окружения
+  // берётся адрес посетителя из поля ip — иначе лимит «5 в час с адреса» считал бы все заявки сайта одним адресом.
+  const leadKey = $os.getenv('CRM_LEAD_KEY');
+  const fromSite = !!leadKey && e.request.header.get('X-Lead-Key') === leadKey;
+  const ip = (fromSite && str(body.ip, 100)) || e.realIP();
   const hourAgo = new Date(Date.now() - 3600000).toISOString().replace('T', ' ');
   const TOO_MANY = 'Слишком много заявок. Попробуйте через час или позвоните нам.';
   if (e.app.findRecordsByFilter('leads', 'ip = {:ip} && at >= {:t}', '', 5, 0, { ip, t: hourAgo }).length >= 5) {
@@ -73,8 +78,7 @@ routerAdd('POST', '/api/expert/lead', (e) => {
   if (e.app.findRecordsByFilter('leads', 'at >= {:t}', '', 60, 0, { t: hourAgo }).length >= 60) {
     throw new TooManyRequestsError(TOO_MANY);
   }
-  let point = str(body.point, 50);
-  if (point) { try { e.app.findRecordById('points', point); } catch (_) { point = ''; } }
+  const point = lib.findLeadPoint(e.app, str(body.point, 200));
 
   const r = new Record(e.app.findCollectionByNameOrId('leads'));
   r.load({ name, phone, device: str(body.device, 500), problem: str(body.problem, 5000), point, status: 'new', ip, at: new DateTime() });

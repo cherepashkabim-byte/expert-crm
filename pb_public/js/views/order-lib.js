@@ -306,6 +306,12 @@ export function ordersSheet(orders, data, { subtitle = '' } = {}) {
 
 // ---------- заявки с сайта ----------
 
+// Новые заявки, которые видит пользователь: владелец — все (и общие, без точки); мастер — только с точкой:
+// выбранной в боковой панели, а при «Все точки» — любой. Заявки без точки разбирает владелец.
+export function leadsFor(leads, { owner, point }) {
+  return (leads || []).filter((l) => (!l.status || l.status === 'new') && (owner || (l.point && (!point || l.point === point))));
+}
+
 // Заявка → данные для формы приёма заказа.
 export function leadDraft(l) {
   return { name: l.name || '', phone: fmtPhone(l.phone), model: l.device || '', fault: l.problem || '', point: l.point || '', source: SITE_SOURCE, lead: l.id };

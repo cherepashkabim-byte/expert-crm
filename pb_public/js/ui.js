@@ -152,17 +152,21 @@ export function confirmDlg(text, { ok = 'Да', cancel = 'Отмена', danger 
 
 // ---------- сообщения ----------
 
-export function toast(text, kind = 'ok') {
+// opts.onClick — тост кликабельный (клик вызывает и закрывает); opts.ms — сколько держать.
+export function toast(text, kind = 'ok', opts = {}) {
   const root = $('#toasts');
   if (!root) return;
   const el = document.createElement('div');
-  el.className = 'toast ' + kind;
+  el.className = 'toast ' + kind + (opts.onClick ? ' click' : '');
   el.textContent = text;
-  root.appendChild(el);
-  setTimeout(() => {
+  const hide = () => {
+    if (el.classList.contains('out')) return;
     el.classList.add('out'); // уезжает вправо, затем удаляется
     setTimeout(() => el.remove(), 200);
-  }, kind === 'error' ? 6000 : 3000);
+  };
+  if (opts.onClick) el.addEventListener('click', () => { hide(); opts.onClick(); });
+  root.appendChild(el);
+  setTimeout(hide, opts.ms || (kind === 'error' ? 6000 : 3000));
 }
 
 export const OFFLINE_TEXT = 'Нет связи с сервером, изменения не сохранены';

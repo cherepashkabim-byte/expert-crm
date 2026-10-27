@@ -2,6 +2,7 @@
 import { store } from './store.js';
 import * as ui from './ui.js';
 import * as calc from './calc.js';
+import { leadsFor } from './views/order-lib.js';
 
 const { esc } = ui;
 
@@ -75,9 +76,49 @@ function navigate(to, extra = {}) {
   renderTab({ params, reason: 'navigate' });
 }
 
+// У «Заказов» — число новых заявок с сайта, которые видит пользователь (leadsFor).
 function renderNav() {
+  const leads = leadsFor(store.data.leads, { owner: store.isOwner, point: store.point }).length;
   $('#nav').innerHTML = TABS.map(([id, t]) =>
-    `<button type="button" data-tab="${id}" class="${id === current ? 'active' : ''}">${esc(t)}</button>`).join('');
+    `<button type="button" data-tab="${id}" class="${id === current ? 'active' : ''}">${esc(t)}${id === 'orders' && leads
+      ? ` <span class="nav-badge" title="Новые заявки с сайта">${leads}</span>` : ''}</button>`).join('');
+}
+
+// ---------- новая заявка с сайта: тост (клик — оформить), короткий звук, системное уведомление, если вкладка свёрнута ----------
+
+function notifyLead(l) {
+  const who = (l.name || 'Клиент') + (l.point ? ' · ' + ui.pointName(l.point) : '');
+  const open = () => { window.focus(); navigate('orders', { leadId: l.id }); };
+  ui.toast(`Новая заявка с сайта: ${who}. Нажмите, чтобы оформить`, 'ok', { onClick: open, ms: 15000 });
+  beep();
+  if (document.hidden && 'Notification' in window && Notification.permission === 'granted') {
+    const n = new Notification('Новая заявка с сайта', { body: [who, l.device, l.problem].filter(Boolean).join('\n'), tag: 'lead-' + l.id });
+    n.onclick = () => { n.close(); open(); };
+  }
+}
+
+function beep() {
+  try {
+    const ac = new (window.AudioContext || window.webkitAudioContext)();
+    [880, 1320].forEach((f, i) => {
+      const t = ac.currentTime + i * 0.18;
+      const o = ac.createOscillator();
+      const g = ac.createGain();
+      o.frequency.value = f;
+      g.gain.setValueAtTime(0.15, t);
+      g.gain.exponentialRampToValueAtTime(0.001, t + 0.16);
+      o.connect(g).connect(ac.destination);
+      o.start(t);
+      o.stop(t + 0.17);
+    });
+    setTimeout(() => ac.close(), 600);
+  } catch (_) { /* звук необязателен */ }
+}
+
+// Разрешение на системные уведомления браузер даёт только по действию пользователя — спрашиваем при первом клике.
+function askNotifyPermission() {
+  if (!('Notification' in window) || Notification.permission !== 'default') return;
+  document.addEventListener('pointerdown', () => { Notification.requestPermission().catch(() => {}); }, { once: true });
 }
 
 // ---------- перерисовка по данным: не чаще 300 мс, не при открытой модалке и не при фокусе в поле ----------
@@ -111,6 +152,9 @@ document.addEventListener('focusout', () => setTimeout(() => { if (dirty) schedu
 store.on((ch) => {
   if (ch.collection === 'points' || ch.type === 'point' || ch.type === 'load') renderPointSel();
   if (ch.collection === 'users') renderMe();
+  if (started && (ch.collection === 'leads' || ch.type === 'point')) renderNav();
+  if (started && ch.collection === 'leads' && ch.action === 'create'
+    && leadsFor([ch.record], { owner: store.isOwner, point: store.point }).length) notifyLead(ch.record);
   scheduleRender();
 });
 store.onNet((online) => ui.setOffline(!online));
@@ -318,6 +362,7 @@ async function startShell() {
   clockTimer = setInterval(tick, 15000);
   if (!store.point) await askPoint();
   started = true;
+  askNotifyPermission();
   navigate(current, startParams);
   startParams = {};
 }

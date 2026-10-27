@@ -203,6 +203,8 @@ td .btn + .btn { margin-left:6px; }
 .toast.error { border-left-color:var(--danger); }
 .toast.warn { border-left-color:var(--warn); }
 .toast.out { animation:toastOut .2s ease-in forwards; }
+.toast.click { cursor:pointer; border-left-color:var(--orange); }
+.nav-badge { display:inline-block; min-width:20px; margin-left:6px; padding:0 6px; border-radius:10px; background:var(--orange); color:var(--navy); font-size:12px; font-weight:700; line-height:20px; text-align:center; }
 .offline { position:fixed; left:0; right:0; top:0; z-index:60; background:var(--danger); color:var(--on-dark); font-weight:700; text-align:center; padding:8px 12px; }
 
 /* ---------- экран входа ---------- */

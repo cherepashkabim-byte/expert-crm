@@ -4,7 +4,7 @@
 import {
   STATUSES, STATUS_LABEL, SOURCES, DEVICE_TYPES, PAY_METHODS, findClient, personName, clientOrders,
   blankHtml, blankVars, statusChip, deviceText, historyTable, orderList,
-  matchFilter, filterCounts, warrantyDraft, warrantyCheck, remindState, ordersSheet, leadDraft, timeline, FIELD_LABEL,
+  matchFilter, filterCounts, warrantyDraft, warrantyCheck, remindState, ordersSheet, leadDraft, leadsFor, timeline, FIELD_LABEL,
   peopleOptions, matchPeople, NO_MASTER,
 } from './order-lib.js';
 import { openQuick } from './order-quick.js';
@@ -48,7 +48,8 @@ function photosError(files, free) {
 // ---------- заявки с сайта ----------
 
 function newLeads(store, onLoaded) {
-  if (Array.isArray(store.data.leads)) return store.data.leads.filter((l) => l.status === 'new');
+  const who = { owner: store.isOwner, point: store.point };
+  if (Array.isArray(store.data.leads)) return leadsFor(store.data.leads, who);
   if (!leadsCache.loading && Date.now() - leadsCache.at > 60000) {
     leadsCache.loading = true;
     store.request(() => store.pb.collection('leads').getFullList({ filter: 'status = "new"', sort: '-at' }))
@@ -56,7 +57,7 @@ function newLeads(store, onLoaded) {
       .catch(() => { leadsCache.list = leadsCache.list || []; })
       .finally(() => { leadsCache.at = Date.now(); leadsCache.loading = false; });
   }
-  return (leadsCache.list || []).filter((l) => l.status === 'new');
+  return leadsFor(leadsCache.list, who);
 }
 
 async function updateLead(store, id, body) {

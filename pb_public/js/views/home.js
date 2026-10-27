@@ -1,8 +1,7 @@
 // Вкладка «Главная»: сводка текущей точки на сегодня. Все цифры — calc.pointDashboard.
-import { deviceText } from './order-lib.js';
+import { deviceText, leadsFor } from './order-lib.js';
 
 const DAY = 86400000;
-const isNewLead = (l) => !l.status || l.status === 'new';
 
 export default {
   id: 'home',
@@ -51,14 +50,14 @@ export default {
       <td>${esc(x.name || '—')}</td><td class="muted small">${x.kind === 'part' ? 'запчасть' : 'товар'}</td>
       <td class="num ${x.stock <= 0 ? 'home-red' : 'home-amber'}"><b>${x.stock}</b> шт.</td>${pointId ? '' : `<td class="muted small">${esc(ui.pointName(x.item.point))}</td>`}</tr>`).join('');
 
-    // Заявки намеренно со всех точек (не только текущей): желаемая точка необязательна, заявка не должна потеряться.
-    const leads = (data.leads || []).filter(isNewLead)
+    // Заявки: мастеру — его точки, владельцу — все, в том числе общие (без точки) — leadsFor.
+    const leads = leadsFor(data.leads, { owner: store.isOwner, point: pointId })
       .sort((a, b) => String(b.at || b.created).localeCompare(String(a.at || a.created)));
     const leadRows = leads.map((l) => `<tr class="click" data-lead="${esc(l.id)}">
       <td>${esc(ui.fmtDateTime(l.at || l.created))}</td>
       <td>${esc(l.name || '—')}<div class="muted small">${esc(ui.fmtPhone(l.phone))}</div></td>
       <td>${esc(l.device || '—')}<div class="muted small wrap">${esc(l.problem || '')}</div></td>
-      <td class="muted small">${l.point ? esc(ui.pointName(l.point)) : 'любая'}</td></tr>`).join('');
+      <td class="muted small">${l.point ? esc(ui.pointName(l.point)) : 'не выбрана'}</td></tr>`).join('');
 
     const title = pointId ? esc(ui.pointName(pointId)) : 'все точки';
     el.innerHTML = `<div class="head"><h2>Главная</h2><span class="muted">${title} · ${esc(ui.fmtDate(now))}</span></div>
