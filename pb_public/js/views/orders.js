@@ -552,7 +552,7 @@ function suggest(input, getItems, html, onPick) {
 
 // Выпадающий список вариантов с галочками под полем «Внешний вид»/«Неисправность» (стиль .sugg).
 // getItems() — строки-варианты. Клик или ↑↓+Enter — добавить/убрать вариант в тексте через запятую (toggleItem),
-// список остаётся открытым; ввод фильтрует по последнему фрагменту; Esc закрывает только список; клик мимо — закрывает.
+// список остаётся открытым; ввод фильтрует по последнему фрагменту; закрывают кнопка «Готово» внизу списка, Esc (только список) и клик мимо.
 // После выбора поле получает input; при закрытии списка, если значение изменилось, — change (сохранение как при ручном вводе).
 function multiPick(input, getItems) {
   if (!input) return;
@@ -576,7 +576,7 @@ function multiPick(input, getItems) {
     list.innerHTML = items.map((x, i) => {
       const on = hasItem(input.value, x);
       return `<button type="button" tabindex="-1" role="option" aria-selected="${on}" class="sugg-i mp-i${i === cur ? ' on' : ''}${on ? ' sel' : ''}" data-i="${i}"><span class="mp-box" aria-hidden="true">${on ? '✓' : ''}</span>${esc(x)}</button>`;
-    }).join('');
+    }).join('') + '<button type="button" tabindex="-1" class="btn mp-done" data-done>Готово</button>';
     list.hidden = !items.length || document.activeElement !== input;
     list.querySelector('.on')?.scrollIntoView({ block: 'nearest' });
   };
@@ -597,7 +597,11 @@ function multiPick(input, getItems) {
   input.addEventListener('input', (e) => { if (e.isTrusted) { cur = -1; draw(); } });
   input.addEventListener('blur', () => setTimeout(() => { if (document.activeElement !== input) close(); }, 150));
   list.addEventListener('mousedown', (e) => e.preventDefault()); // не терять фокус поля при клике по списку
-  list.addEventListener('click', (e) => { const b = e.target.closest('[data-i]'); if (b) toggle(items[Number(b.dataset.i)]); });
+  list.addEventListener('click', (e) => {
+    if (e.target.closest('[data-done]')) { close(); return; }
+    const b = e.target.closest('[data-i]');
+    if (b) toggle(items[Number(b.dataset.i)]);
+  });
   input.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowDown' && list.hidden) { e.preventDefault(); cur = 0; draw(); return; }
     if (list.hidden || !items.length) return;
