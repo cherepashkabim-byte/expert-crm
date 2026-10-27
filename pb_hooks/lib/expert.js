@@ -193,6 +193,28 @@ function assertOpen(app, dates) {
   for (const d of dates) if (isClosedDate(app, d)) throw new BadRequestError(MONTH_CLOSED);
 }
 
+// ---------- закрытие дня ----------
+// После 00:00 по Кемерово мастер не меняет выданные заказы и деньги прошлых дней; владелец и суперпользователь — всё.
+const DAY_CLOSED = 'День закрыт: выданные заказы и деньги прошлых дней может менять только владелец';
+function dayStart(ms) {
+  const DAY = 86400000, tz = TZ_HOURS * 3600000;
+  return pbDate(Math.floor(((ms == null ? Date.now() : ms) + tz) / DAY) * DAY - tz);
+}
+// Бросает 400 мастеру, если хоть одна дата (строка поля date) раньше начала сегодняшнего дня. Пустая дата — сегодня.
+function assertDayOpen(e, dates) {
+  if (!e.auth || e.hasSuperuserAuth() || authRole(e) === 'owner') return;
+  const start = dayStart();
+  // в закрытом месяце — его сообщение (точнее, и владелец там тоже ничего не меняет)
+  for (const d of dates) if (d && String(d) < start) throw new BadRequestError(isClosedDate(e.app, d) ? MONTH_CLOSED : DAY_CLOSED);
+}
+// Дата выдачи заказа, если он выдан (для проверки закрытого дня), иначе ''.
+function issuedDay(app, orderId) {
+  try {
+    const o = app.findRecordById('orders', orderId);
+    return o.getString('status') === 'issued' ? o.getString('issuedAt') : '';
+  } catch (_) { return ''; }
+}
+
 // Денежные поля заказа: их нельзя менять у заказа, выданного в закрытом месяце.
 const ORDER_MONEY = ['price', 'courier', 'repairedBy', 'repairedName', 'status', 'issuedAt', 'masterPayManual', 'point', 'warrantyOf'];
 
@@ -239,4 +261,5 @@ function findLeadPoint(app, text) {
 }
 
 module.exports = { moneyText, orderLogText, logOrderItem, authUserId, authRole, deviceName, snapshot, writeLog, logDiff, phoneDigits, phoneValid, PHONE_ERR, notifyReady, notifyRemind, addStock,
-  defaultPointId, checkPartPoint, monthBounds, isClosedDate, assertOpen, MONTH_CLOSED, ORDER_MONEY, findLeadPoint };
+  defaultPointId, checkPartPoint, monthBounds, isClosedDate, assertOpen, MONTH_CLOSED, ORDER_MONEY, findLeadPoint,
+  DAY_CLOSED, dayStart, assertDayOpen, issuedDay };

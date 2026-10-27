@@ -9,6 +9,9 @@ export const COLLECTIONS = ['users', 'points', 'settings', 'clients', 'orders', 
   'parts', 'products', 'sales', 'tasks', 'cash_ops', 'fines', 'visits', 'leads', 'stock_moves', 'month_closes', 'shifts', 'kb_articles'];
 
 const POINT_KEY = 'expert.point';
+// День входа по Кемерово (UTC+7): в 00:00 сессия мастера заканчивается (владельца — нет).
+const DAY_KEY = 'expert.loginDay';
+const workDay = () => new Date(Date.now() + 7 * 3600000).toISOString().slice(0, 10);
 const listeners = new Set();
 const netListeners = new Set();
 const authLostListeners = new Set();
@@ -127,6 +130,7 @@ export const store = {
   async login(email, password) {
     const r = await guard(() => pb.collection('users').authWithPassword(email, password));
     lsDel(POINT_KEY); // после входа всегда спрашиваем точку
+    lsSet(DAY_KEY, workDay());
     return r.record;
   },
   // Проверить сохранённую сессию: true — вошли, false — нужен вход. Сеть → исключение.
@@ -134,6 +138,7 @@ export const store = {
     if (!pb.authStore.isValid) return false;
     try {
       await guard(() => pb.collection('users').authRefresh());
+      if (this.dayOver) { this.logout(); return false; }
       return true;
     } catch (e) {
       if (e.isNetwork) throw e;
@@ -153,9 +158,13 @@ export const store = {
     }
     await guard(() => pb.collection('users').update(this.me.id, { oldPassword, password, passwordConfirm: password }));
     await guard(() => pb.collection('users').authWithPassword(email, password));
+    lsSet(DAY_KEY, workDay());
   },
+  // Мастер вошёл не сегодня (по Кемерово) — рабочий день закончился, нужен новый вход.
+  get dayOver() { return !!this.me && !this.isOwner && lsGet(DAY_KEY) !== workDay(); },
   logout() {
     lsDel(POINT_KEY);
+    lsDel(DAY_KEY);
     pb.realtime.unsubscribe().catch(() => {});
     subscribed = false;
     pb.authStore.clear();

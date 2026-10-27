@@ -220,7 +220,9 @@ function passwordDialog() {
 
 const DAYS = ['воскресенье', 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота'];
 let clockTimer = null;
+const DAY_OVER = 'Рабочий день закончился в 00:00 — войдите снова.';
 function tick() {
+  if (started && store.dayOver) { stopShell(); store.logout(); showLogin(DAY_OVER); return; }
   const d = new Date();
   const t = d.toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit' });
   $('#clock').innerHTML = `<div class="time">${t}</div><div>${ui.fmtDate(d)}, ${DAYS[d.getDay()]}</div>`;
