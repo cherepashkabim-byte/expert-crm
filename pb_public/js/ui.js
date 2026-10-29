@@ -6,7 +6,7 @@ const $ = (s) => document.querySelector(s);
 
 // ---------- форматирование (общее с calc/order-lib/cash — в fmt.js) ----------
 
-export { esc, money, toDate, fmtDate, fmtDateTime, toInputDate, fromInputDate, today, digits, plural, normPhone, fmtPhone, phoneMatch, phoneValid, PHONE_ERR } from './fmt.js';
+export { esc, money, toDate, fmtDate, fmtDateTime, toInputDate, fromInputDate, today, digits, plural, normPhone, fmtPhone, phoneMatch, phoneValid, PHONE_ERR, noPhone, PHONE_OR_DASH } from './fmt.js';
 import { fmtPhone, phoneTyping } from './fmt.js';
 import { xlsxBook, XLSX_TYPE } from './xlsx.js';
 

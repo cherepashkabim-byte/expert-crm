@@ -83,6 +83,9 @@ export function phoneTyping(s) {
 // Номер клиента правильный, если кроме цифр в нём только пробелы, скобки, дефисы и «+»,
 // а цифр ровно 11 и первая — 7 или 8.
 export const PHONE_ERR = 'Проверьте номер: нужно 11 цифр, например 8 900 123-45-67';
+// «-» вместо номера — номер клиента неизвестен: заказ принимается, клиент создаётся без телефона (всегда новый).
+export const noPhone = (s) => String(s ?? '').trim() === '-';
+export const PHONE_OR_DASH = PHONE_ERR + '. Номер неизвестен — поставьте «-»';
 export function phoneValid(s) {
   const str = String(s ?? '');
   if (!/^[\d\s()+-]*$/.test(str)) return false;

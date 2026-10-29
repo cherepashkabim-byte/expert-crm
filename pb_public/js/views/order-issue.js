@@ -1,4 +1,4 @@
-// Окно «Выдать клиенту»: сводка заказа и оплата остатка → статус «Выдан».
+// Окно «Выдать клиенту»: сводка заказа и оплата остатка целиком (в долг не выдают) → статус «Выдан».
 // Цену, мастера и гарантию спрашивает, только если их нет в заказе; запчасти и курьер правятся в карточке.
 import { PAY_METHODS, blankHtml, blankVars } from './order-lib.js';
 
@@ -12,7 +12,6 @@ export function openIssue({ store, ui, calc }, orderId) {
   const { esc } = ui;
   const o0 = store.data.orders.find((x) => x.id === orderId);
   if (!o0) return;
-  let payTouched = false;
   const me = store.me;
   const warranty = calc.isWarranty(o0); // гарантия: цена 0, оплата не принимается
   // Цена, гарантия, курьер, мастер и запчасти уже заполнены в карточке («Работы и материалы») — здесь их не повторяем.
@@ -31,7 +30,7 @@ export function openIssue({ store, ui, calc }, orderId) {
       </div>` : ''}
       <div class="iss-sum"></div>
       <p class="muted small">Изменить цену, запчасти, курьера или мастера — на вкладке «Работы и материалы».</p>
-      ${warranty ? '' : `<div class="fields iss-pay"><label>Принять сейчас, ₽<input type="number" name="pay" min="0" step="1"></label>
+      ${warranty ? '' : `<div class="fields iss-pay"><label>К оплате, ₽<input type="number" name="pay" readonly tabindex="-1"></label>
         <label>Способ<select name="payMethod">${ui.options(PAY_METHODS, o0.payMethod || 'Нал')}</select></label></div>`}
       <div class="err" hidden></div>
       <div class="actions"><button type="button" class="btn ghost" data-close>Отмена</button>
@@ -72,13 +71,12 @@ export function openIssue({ store, ui, calc }, orderId) {
       + row('Внесено', ui.money(paid), 'pos') + row('К доплате', ui.money(toPay), toPay ? 'neg' : '')}
     </dl>`;
     if (form.pay) {
-      if (!payTouched) form.pay.value = toPay || '';
-      form.querySelector('.iss-pay').hidden = !toPay && !Number(form.pay.value);
+      form.pay.value = toPay || '';
+      form.querySelector('.iss-pay').hidden = !toPay;
     }
   }
 
   form.addEventListener('input', (e) => {
-    if (e.target.name === 'pay') payTouched = true;
     if (e.target.name) { e.target.classList.remove('bad'); e.target.parentElement.querySelector('.field-err')?.remove(); }
     if (e.target.name === 'price') refresh();
   });
@@ -105,23 +103,20 @@ export function openIssue({ store, ui, calc }, orderId) {
     let bad = false;
     if (needPrice && !(f.price > 0)) { fieldErr('price', 'Укажите точную цену'); bad = true; }
     if (needMaster && !f.repairedBy) { fieldErr('repairedBy', 'Укажите, кто сделал ремонт'); bad = true; }
-    if (f.pay < 0) { errBox.textContent = 'Сумма не может быть отрицательной'; errBox.hidden = false; bad = true; }
     if (bad) return;
     const btn = form.querySelector('[type=submit]');
     sending = true;
     try {
       await ui.busy(btn, async () => {
-        // Оплата создаётся один раз: после успеха поле очищается, повтор после ошибки её не задублирует.
-        if (!warranty && f.pay > 0) {
-          await store.create('payments', { order: orderId, amount: Math.round(f.pay), method: f.payMethod, by: me.id });
-          payTouched = true;
-          form.pay.value = '';
-        }
+        // Весь остаток — одной оплатой. Считается по данным заново: после успешной оплаты остаток 0,
+        // поэтому повтор после ошибки её не задублирует.
+        const toPay = warranty ? 0 : calc.orderDebt(sim(), store.data);
+        if (toPay > 0) await store.create('payments', { order: orderId, amount: Math.round(toPay), method: f.payMethod, by: me.id });
         await store.update('orders', orderId, {
           ...(needPrice ? { price: Math.round(f.price) } : {}),
           ...(needMaster ? { repairedBy: f.repairedBy } : {}),
           ...(needWarranty ? { warranty: Math.round(f.warranty || 0) } : {}),
-          ...(!warranty && f.pay > 0 ? { payMethod: f.payMethod } : {}),
+          ...(toPay > 0 ? { payMethod: f.payMethod } : {}),
           status: 'issued',
         });
       });

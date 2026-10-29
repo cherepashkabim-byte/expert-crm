@@ -18,7 +18,7 @@ export default {
   },
 };
 
-// Сводка по клиенту: ремонтов, принёс, долг (calc.clientSummary — долг по всем не отказанным заказам) + сами заказы.
+// Сводка по клиенту: ремонтов, принёс (calc.clientSummary) + сами заказы. Долга в интерфейсе нет — в долг не выдают.
 function summary(c, data) {
   return { orders: clientOrders(c.id, data), ...clientSummary(c.id, data) };
 }
@@ -38,10 +38,10 @@ function renderList(el, ctx) {
       <span class="muted small">${data.clients.length} ${ui.plural(data.clients.length, 'клиент', 'клиента', 'клиентов')}</span></div>
     ${!data.clients.length ? '<p class="empty">Клиентов пока нет — они появятся при приёме заказа. <button class="btn" data-new>Создать заказ</button></p>'
       : !rows.length ? '<p class="empty">Никого не нашли <button class="btn ghost" data-reset>Сбросить поиск</button></p>'
-      : `<div class="tw"><table><thead><tr><th>ФИО</th><th>Телефон</th><th>Источник</th><th class="num">Ремонтов</th><th class="num">Принёс</th><th class="num">Долг</th><th>Последний заказ</th></tr></thead><tbody>
+      : `<div class="tw"><table><thead><tr><th>ФИО</th><th>Телефон</th><th>Источник</th><th class="num">Ремонтов</th><th class="num">Принёс</th><th>Последний заказ</th></tr></thead><tbody>
         ${rows.slice(0, LIMIT).map((r) => `<tr class="click" data-client="${esc(r.c.id)}"><td>${esc(r.c.name || '—')}</td><td>${esc(ui.fmtPhone(r.c.phone) || '—')}</td>
           <td>${esc(r.c.source || '—')}</td><td class="num">${r.repairs}</td><td class="num">${ui.money(r.money)}</td>
-          <td class="num ${r.debt ? 'neg' : ''}">${r.debt ? ui.money(r.debt) : '—'}</td><td>${esc(ui.fmtDate(r.last) || '—')}</td></tr>`).join('')}
+          <td>${esc(ui.fmtDate(r.last) || '—')}</td></tr>`).join('')}
         </tbody></table></div>
         ${rows.length > LIMIT ? `<p class="muted small">Показаны ${LIMIT} из ${rows.length}. Уточните поиск.</p>` : ''}`}`;
 
@@ -76,7 +76,6 @@ function renderCard(el, ctx, c) {
     <div class="cards">
       <div class="card"><div class="l">Ремонтов</div><div class="v">${sm.repairs}</div></div>
       <div class="card"><div class="l">Принёс денег</div><div class="v">${ui.money(sm.money)}</div></div>
-      <div class="card"><div class="l">Долг</div><div class="v ${sm.debt ? 'neg' : ''}">${ui.money(sm.debt)}</div></div>
     </div>
     <section class="sect"><h3>Данные клиента</h3>
       <div class="fields">
@@ -114,7 +113,7 @@ function renderCard(el, ctx, c) {
     const bad = (t) => { input.classList.add('bad'); input.insertAdjacentHTML('afterend', `<div class="field-err">${esc(t)}</div>`); };
     if (f === 'name' && !v) { bad('Укажите ФИО'); return; }
     if (f === 'phone') {
-      if (!ui.phoneValid(v)) { bad(ui.PHONE_ERR); return; }
+      if (!ui.phoneValid(v) && !ui.noPhone(v)) { bad(ui.PHONE_OR_DASH); return; }
       const other = findClient(data.clients, v);
       if (other && other.id !== c.id) { bad(`Этот номер уже у клиента «${other.name}»`); return; }
     }

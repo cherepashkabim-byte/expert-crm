@@ -315,7 +315,7 @@ function openCreate(ctx, clientId, preset = {}) {
     <div class="dr-body"><form id="newOrder" novalidate>${banner}
       <h3 class="dr-sect">Клиент</h3>
       <div class="fields">
-        <label>Телефон *<input name="phone" type="tel" autocomplete="off" placeholder="8 900 123-45-67" value="${esc(ui.fmtPhone(pre?.phone || preset.phone))}"></label>
+        <label>Телефон *<input name="phone" type="tel" autocomplete="off" placeholder="8 900 123-45-67 или «-», если неизвестен" value="${esc(ui.fmtPhone(pre?.phone || preset.phone))}"></label>
         <label>ФИО клиента *<input name="name" autocomplete="off" value="${esc(pre?.name || preset.name || '')}"></label>
         <label class="full">Рекламный источник<input name="source" list="ordSrc" autocomplete="off" value="${esc(preset.source || pre?.source || '')}" placeholder="выберите или впишите"></label>
       </div>
@@ -438,7 +438,7 @@ function openCreate(ctx, clientId, preset = {}) {
     const f = ui.formData(form);
     const errs = {};
     if (!f.phone) errs.phone = 'Укажите телефон';
-    else if (!ui.phoneValid(f.phone)) errs.phone = ui.PHONE_ERR;
+    else if (!ui.phoneValid(f.phone) && !ui.noPhone(f.phone)) errs.phone = ui.PHONE_OR_DASH;
     if (!f.name) errs.name = 'Укажите ФИО клиента';
     for (const [k, t] of Object.entries(REQUIRED)) if (!f[k]) errs[k] = t;
     if (!f.point) errs.point = 'Выберите точку';
@@ -726,7 +726,7 @@ function renderCard(el, ctx, o) {
         : `<dt>Прибыль</dt><dd class="${pr < 0 ? 'neg' : ''}">${ui.money(pr)}</dd>`}
       <dt>ЗП мастера <span class="muted">(${esc(mpNote)})</span></dt><dd>${ui.money(mp)}</dd>
       <dt class="pos">Внесено</dt><dd class="pos">${ui.money(paid)}</dd>
-      <dt>К доплате</dt><dd class="${debt ? 'neg' : ''}">${ui.money(debt)}</dd></dl>`;
+      <dt>К оплате</dt><dd>${ui.money(debt)}</dd></dl>`;
 
   const work = `${warranty ? '<p class="ord-note">Гарантийный ремонт: цена 0 ₽, мастеру 0 ₽; запчасти и курьер — расход сервиса на гарантию.</p>' : ''}
     <div class="oc-grid oc-work">
@@ -878,7 +878,7 @@ function renderCard(el, ctx, o) {
     input.parentElement.querySelector('.field-err')?.remove();
     if (!v) { fieldErr(input, f === 'name' ? 'Укажите ФИО' : 'Укажите телефон'); return; }
     if (f === 'phone') {
-      if (!ui.phoneValid(v)) { fieldErr(input, ui.PHONE_ERR); return; }
+      if (!ui.phoneValid(v) && !ui.noPhone(v)) { fieldErr(input, ui.PHONE_OR_DASH); return; }
       const other = findClient(data.clients, v);
       if (other && other.id !== c.id) { fieldErr(input, `Этот номер уже у клиента «${other.name}»`); return; }
     }

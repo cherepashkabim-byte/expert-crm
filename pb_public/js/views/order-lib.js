@@ -252,7 +252,7 @@ export function stockHint(part, data) {
 // Цвет статуса в таблице — как чипы статусов на экране.
 const STATUS_TONE = { new: 'orange', diag: 'blue', wait: 'warn', work: 'purple', ready: 'ok', issued: 'muted', refuse: 'bad' };
 
-// Лист «Заказы» для xlsx.xlsxBook: шапка, ₽, даты, цвет статуса, долг красным, итоги по деньгам.
+// Лист «Заказы» для xlsx.xlsxBook: шапка, ₽, даты, цвет статуса, итоги по деньгам.
 // meta: { subtitle } — подпись под заголовком (дата выгрузки, точка, фильтр).
 export function ordersSheet(orders, data, { subtitle = '' } = {}) {
   const cl = (o) => byId(list(data, 'clients'), o.client) || {};
@@ -269,7 +269,7 @@ export function ordersSheet(orders, data, { subtitle = '' } = {}) {
     { title: 'Источник', type: 'text', width: 14 },
     { title: 'Цена', type: 'money', width: 12 },
     { title: 'Оплачено', type: 'money', width: 12 },
-    { title: 'Долг', type: 'money', width: 12 },
+    { title: 'К оплате', type: 'money', width: 12 },
     { title: 'Запчасти', type: 'money', width: 12 },
     { title: 'Прибыль', type: 'money', width: 12 },
     { title: 'ЗП мастера', type: 'money', width: 12 },
@@ -292,7 +292,7 @@ export function ordersSheet(orders, data, { subtitle = '' } = {}) {
       orderSource(o, data),
       Number(o.price) || 0,
       orderPaid(o, data),
-      debt > 0 ? { v: debt, tone: 'bad' } : debt,
+      debt,
       partsCost(o, data),
       pr !== null && pr < 0 ? { v: pr, tone: 'bad' } : pr,
       issued(o) ? masterPay(o, data) : null,
